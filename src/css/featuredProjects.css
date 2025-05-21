@@ -1,0 +1,44 @@
+.project {
+    width: 90vw;
+    height: 100vh;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    text-align-last: left;
+}
+
+.featuredProjectImg {
+    width: 50vw;
+    height: 70vh;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* .text {} */
+
+
+.text button {
+    width: 7vw;
+    height: 5vh;
+    font-size: 0.8rem;
+    border: none;
+}
+
+.text button a {
+    text-decoration: none;
+    justify-content: center;
+    display: flex;
+}
+
+.liveSiteBtn {
+    background-color: #007bff;
+
+}
+
+.liveSiteBtn a {
+    color: white;
+}
+
+.viewCodeBtn {
+    background-color: white;
+}

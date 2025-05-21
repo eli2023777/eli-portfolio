@@ -1,0 +1,140 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, useScroll, useTransform } from "motion/react";
+import '../css/introAnimation.css'
+
+const IntroAnimationC = () => {
+    const { scrollYProgress } = useScroll();
+    const sectionRef = useRef(null);
+    const [sectionTop, setSectionTop] = useState(0);
+    const [opacity, setOpacity] = useState(1);
+
+
+    useEffect(() => {
+        const updateSectionTop = () => {
+            if (sectionRef.current) {
+                setSectionTop(sectionRef.current.getBoundingClientRect().top);
+            }
+        };
+
+        window.addEventListener("scroll", updateSectionTop);
+        updateSectionTop();
+
+        return () => window.removeEventListener("scroll", updateSectionTop);
+    }, []);
+
+
+    useEffect(() => {
+        const unsubscribe = scrollYProgress.onChange((latest) => {
+            if (latest >= 0.4) {
+                setTimeout(() => setOpacity(0), 200);
+            } else {
+                setOpacity(1);
+            }
+        });
+
+        return () => unsubscribe();
+    }, [scrollYProgress]);
+
+
+    const start = sectionTop;
+    const end = sectionTop + window.innerHeight;
+    const scrollYProgressInSection = useTransform(scrollYProgress, [start, end], [0, 1]);
+
+    const textX = useTransform(scrollYProgressInSection, [0, 1], ["50%", "-300%"]);
+    const blackScreenX = useTransform(scrollYProgressInSection, [0, 1], ["-110%", "0%"]);
+    const meImg = useTransform(scrollYProgressInSection, [0, 1], ["-50%", "7%"]);
+    const newTextY = useTransform(scrollYProgressInSection, [0, 1], ["-50%", "50%"]);
+
+
+    return (
+        <div>
+            <div className="introContainer" style={{ height: "400vh" }}>
+                <div ref={sectionRef} style={{ height: "100vh", background: "#fff", overflow: "hidden" }}>
+                    <motion.div
+                        style={{
+                            position: "fixed",
+                            top: "0",
+                            left: blackScreenX,
+                            width: "100vw",
+                            height: "100vh",
+                            backgroundColor: "black",
+                            zIndex: 1,
+                            opacity: opacity,
+                            transition: "opacity 0.5s ease-out"
+
+                        }}
+                    ></motion.div>
+
+                    <motion.img
+                        src='/me.png'
+                        alt='me'
+                        style={{
+                            position: "fixed",
+                            top: '10vh',
+                            left: meImg,
+                            opacity: opacity,
+                            zIndex: 1,
+                            width: "420px",
+                            height: "420px",
+                            WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
+                            maskImage: "radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%)",
+                            // filter: "drop-shadow(0px 0px 20px rgba(0,0,0,0.5))"
+                        }}
+                    ></motion.img>
+
+                    <motion.h1
+                        style={{
+                            position: "fixed",
+                            top: "calc(50% - 2em)",
+                            left: "calc(50% - 2em)",
+                            transform: "translate(-50%, -50%)",
+                            fontSize: "10rem",
+                            whiteSpace: "nowrap",
+                            mixBlendMode: "difference",
+                            color: "white",
+                            x: textX,
+                            zIndex: 2,
+                            opacity: opacity,
+                        }}
+                    >
+                        Hi! <br /> I'm Eli
+                    </motion.h1>
+
+                    <div
+                        style={{
+                            position: "fixed",
+                            top: 0,
+                            left: 0,
+                            width: "100vw",
+                            height: "100vh",
+                            overflow: "hidden",
+                            zIndex: 1,
+                        }}
+                    >
+                        <motion.h1
+                            style={{
+                                position: "absolute",
+                                top: newTextY,
+                                left: "65%",
+                                transform: "translate(-50%, -50%)",
+                                fontSize: "3rem",
+                                whiteSpace: "nowrap",
+                                color: "white",
+                                opacity: opacity,
+                            }}
+
+                        >
+                            Welcome to my portfolio
+                            <br />
+                            <br />
+                            <button></button>
+                            <button></button>
+                        </motion.h1>
+                    </div>
+                </div>
+            </div>
+        </div >
+    );
+};
+
+export default IntroAnimationC;
