@@ -49,7 +49,7 @@ const HomePage = () => {
 
         <div class="firstRowIcons">
           <div className="icon">
-            <img src="/icons/img-HTML.png" alt="html" />
+            <img src={`${process.env.PUBLIC_URL}/icons/img-HTML.png`} alt="html" />
             <h8>HTML</h8>
           </div>
 
