@@ -90,7 +90,7 @@ const HomePage = () => {
           </div>
 
           <div className="icon">
-            <img src={`${process.env.PUBLIC_URL}/icons/img-NextJS.png`} alt="next.js" />
+            <img src={`${process.env.PUBLIC_URL}/icons/img-NextJS.svg`} alt="next.js" />
             <h8>NextJS</h8>
           </div>
 
@@ -185,7 +185,7 @@ const HomePage = () => {
 
       {/* <!-- On me section --> */}
       <div class="aboutMe">
-        <img src="/me.jpeg" alt="Big me" />
+        <img src={`${process.env.PUBLIC_URL}/me.jpeg`} alt="Big me" />
         <div className="textOnMe">
           <h2>About me</h2>
           <p className='aboutMePar'>
