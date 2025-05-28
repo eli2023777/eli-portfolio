@@ -54,22 +54,22 @@ const HomePage = () => {
           </div>
 
           <div className="icon">
-            <img src="/icons/img-CSS.png" alt="css" />
+            <img src={`${process.env.PUBLIC_URL}/icons/img-CSS.png`} alt="css" />
             <h8>CSS</h8>
           </div>
 
           <div className="icon">
-            <img src="/icons/img-Bootstrap.png" alt="bootstrap" />
+            <img src={`${process.env.PUBLIC_URL}/icons/img-Bootstrap.png`} alt="bootstrap" />
             <h8>Bootstrap</h8>
           </div>
 
           <div className="icon">
-            <img src="/icons/img-JS.png" alt="js" />
+            <img src={`${process.env.PUBLIC_URL}/icons/img-JS.png`} alt="js" />
             <h8>JavaScript</h8>
           </div>
 
           <div className="icon">
-            <img src="/icons/img-TS.png" alt="ts" />
+            <img src={`${process.env.PUBLIC_URL}/icons/img-TS.png`} alt="ts" />
             <h8>TypeScript</h8>
           </div>
 
@@ -80,27 +80,27 @@ const HomePage = () => {
           {/* <img src="/icons/img-ES6.png" alt="ES6" /> */}
           {/* <img src="/icons/img-API.png" alt="api" /> */}
           <div className="icon">
-            <img src="/icons/img-React.png" alt="react" />
+            <img src={`${process.env.PUBLIC_URL}/icons/img-React.png`} alt="react" />
             <h8>React</h8>
           </div>
 
           <div className="icon">
-            <img src="/icons/img-NodeJS.png" alt="node.js" />
+            <img src={`${process.env.PUBLIC_URL}/icons/img-NodeJS.png`} alt="node.js" />
             <h8>NodeJS</h8>
           </div>
 
           <div className="icon">
-            <img src="/icons/img-NextJS.svg" alt="next.js" />
+            <img src={`${process.env.PUBLIC_URL}/icons/img-NextJS.png`} alt="next.js" />
             <h8>NextJS</h8>
           </div>
 
           <div className="icon">
-            <img src="/icons/img-Git.png" alt="Git" />
+            <img src={`${process.env.PUBLIC_URL}/icons/img-Git.png`} alt="Git" />
             <h8>Git</h8>
           </div>
 
           <div className="icon">
-            <img src="/icons/img-mongoDB.png" alt="mongoDB" />
+            <img src={`${process.env.PUBLIC_URL}/icons/img-mongoDB.png`} alt="mongoDB" />
             <h8>MongoDB</h8>
           </div>
 

@@ -11,7 +11,7 @@ const FeaturedProjects = () => {
                     onDoubleClick={() => window.open(
                         `https://eli2023777.github.io/events-site/`,
                         '_blank', 'noopener,noreferrer')}
-                    src="/images/EventsSitePrtSc.png" alt="Events Site"
+                    src={`${process.env.PUBLIC_URL}/images/EventsSitePrtSc.png`} alt="Events Site"
                 />
                 <div className="text">
                     <h3>Events site</h3>
@@ -47,7 +47,7 @@ const FeaturedProjects = () => {
                     onDoubleClick={() => window.open(
                         `https://eli2023777.github.io/my-cards/`,
                         '_blank', 'noopener,noreferrer')}
-                    src="/images/BcardsPrtSc.png" alt="Bussiness Cards site"
+                    src={`${process.env.PUBLIC_URL}/images/BcardsPrtSc.png`} alt="Bussiness Cards site"
                 />
                 <div className="text">
                     <h3>Bussiness Cards site</h3>
@@ -79,7 +79,7 @@ const FeaturedProjects = () => {
                     onDoubleClick={() => window.open(
                         `https://github.com/eli2023777/NodeJS-Project`,
                         '_blank', 'noopener,noreferrer')}
-                    src="/images/nodeJSPrtSc.png" alt="CRUD API"
+                    src={`${process.env.PUBLIC_URL}/images/nodeJSPrtSc.png`} alt="CRUD API"
                 />
                 <div className="text">
                     <h3>CRUD API</h3>

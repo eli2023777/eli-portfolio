@@ -39,14 +39,14 @@ const LandingPages = () => {
                             `https://eli2023777.github.io/landing-page-good-morning/`,
                             '_blank', 'noopener,noreferrer')}>
 
-                        <img src="images/coffePrtSc.png" alt="Coffee" />
+                        <img src={`${process.env.PUBLIC_URL}/images/coffePrtSc.png`} alt="Coffee" />
 
                         <div className="textArea">
                             <h3>Good Morning</h3>
 
                             <div className="iconsCardContainer">
-                                <img src="icons/img-HTML.png" alt="HTML" />
-                                <img src="icons/img-CSS.png" alt="CSS" />
+                                <img src={`${process.env.PUBLIC_URL}/icons/img-HTML.png`} alt="HTML" />
+                                <img src={`${process.env.PUBLIC_URL}/icons/img-CSS.png`} alt="CSS" />
                             </div>
                             <a href="https://eli2023777.github.io/landing-page-good-morning/" target="_blank"
                                 rel="noopener noreferrer">
@@ -71,14 +71,14 @@ const LandingPages = () => {
                             `https://eli2023777.github.io/landing-page-discover/`,
                             '_blank', 'noopener,noreferrer')}>
 
-                        <img src="images/gridPrtSc.png" alt="Grid" />
+                        <img src={`${process.env.PUBLIC_URL}images/gridPrtSc.png`} alt="Grid" />
 
                         <div className="textArea">
                             <h3>Discover The World</h3>
 
                             <div className="iconsCardContainer">
-                                <img src="icons/img-HTML.png" alt="HTML" />
-                                <img src="icons/img-CSS.png" alt="CSS" />
+                                <img src={`${process.env.PUBLIC_URL}icons/img-HTML.png`} alt="HTML" />
+                                <img src={`${process.env.PUBLIC_URL}icons/img-CSS.png`} alt="CSS" />
                             </div>
                             <a href="https://eli2023777.github.io/landing-page-discover/"
                                 target="_blank"
@@ -104,15 +104,15 @@ const LandingPages = () => {
                             `https://eli2023777.github.io/landing-page-outside-the-box/`,
                             '_blank', 'noopener,noreferrer')}>
 
-                        <img src="images/outsideTheBoxPrtSc.png"
+                        <img src={`${process.env.PUBLIC_URL}/images/outsideTheBoxPrtSc.png`}
                             alt="Outside The Box" />
 
                         <div className="textArea">
                             <h3>Outside The Box</h3>
                             <div className="iconsCardContainer">
-                                <img src="icons/img-HTML.png" alt="HTML" />
-                                <img src="icons/img-CSS.png" alt="CSS" />
-                                <img src="icons/img-Bootstrap.png" alt="Bootstrap" />
+                                <img src={`${process.env.PUBLIC_URL}/icons/img-HTML.png`} alt="HTML" />
+                                <img src={`${process.env.PUBLIC_URL}/icons/img-CSS.png`} alt="CSS" />
+                                <img src={`${process.env.PUBLIC_URL}/icons/img-Bootstrap.png`} alt="Bootstrap" />
                             </div>
                             <a href="https://eli2023777.github.io/landing-page-outside-the-box/" target="_blank"
                                 rel="noopener noreferrer">
@@ -139,14 +139,14 @@ const LandingPages = () => {
                             `https://eli2023777.github.io/landing-page-let-us-pink/`,
                             '_blank', 'noopener,noreferrer')}>
 
-                        <img src="images/letUsPrtSc.png" alt="Let Us Lead U" />
+                        <img src={`${process.env.PUBLIC_URL}/images/letUsPrtSc.png`} alt="Let Us Lead U" />
 
                         <div className="textArea">
                             <h3>Let Us Lead</h3>
 
                             <div className="iconsCardContainer">
-                                <img src="icons/img-HTML.png" alt="HTML" />
-                                <img src="icons/img-CSS.png" alt="CSS" />
+                                <img src={`${process.env.PUBLIC_URL}/icons/img-HTML.png`} alt="HTML" />
+                                <img src={`${process.env.PUBLIC_URL}/icons/img-CSS.png`} alt="CSS" />
                             </div>
                             <a href="https://eli2023777.github.io/landing-page-let-us-pink/" target="_blank"
                                 rel="noopener noreferrer">
@@ -172,15 +172,15 @@ const LandingPages = () => {
                             `https://eli2023777.github.io/landing-page-here-and-now/`,
                             '_blank', 'noopener,noreferrer')}>
 
-                        <img src="/images/hereAndNowPrtSc.png" alt="hereAndNowPrtSc" />
+                        <img src={`${process.env.PUBLIC_URL}/images/hereAndNowPrtSc.png`} alt="hereAndNowPrtSc" />
 
                         <div className="textArea">
                             <h3>Here And Now</h3>
 
                             <div className="iconsCardContainer">
-                                <img src="icons/img-HTML.png" alt="HTML" />
-                                <img src="icons/img-CSS.png" alt="CSS" />
-                                <img src="icons/img-Sass.png" alt="SASS" />
+                                <img src={`${process.env.PUBLIC_URL}/icons/img-HTML.png`} alt="HTML" />
+                                <img src={`${process.env.PUBLIC_URL}/icons/img-CSS.png`} alt="CSS" />
+                                <img src={`${process.env.PUBLIC_URL}/icons/img-Sass.png`} alt="SASS" />
                             </div>
                             <a href="https://eli2023777.github.io/landing-page-here-and-now/" target="_blank"
                                 rel="noopener noreferrer">
@@ -208,14 +208,14 @@ const LandingPages = () => {
                             `https://eli2023777.github.io/landing-page-let-us-blue/`,
                             '_blank', 'noopener,noreferrer')}>
 
-                        <img src="/images/letUsBluePrtSc.png" alt="letUsBluePrtSc" />
+                        <img src={`${process.env.PUBLIC_URL}/images/letUsBluePrtSc.png`} alt="letUsBluePrtSc" />
 
                         <div className="textArea">
                             <h3>Let Us Lead</h3>
 
                             <div className="iconsCardContainer">
-                                <img src="icons/img-HTML.png" alt="HTML" />
-                                <img src="icons/img-CSS.png" alt="CSS" />
+                                <img src={`${process.env.PUBLIC_URL}/icons/img-HTML.png`} alt="HTML" />
+                                <img src={`${process.env.PUBLIC_URL}/icons/img-CSS.png`} alt="CSS" />
                             </div>
 
                             <a href="https://eli2023777.github.io/landing-page-let-us-blue/" target="_blank"

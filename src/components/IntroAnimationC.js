@@ -71,7 +71,7 @@ const IntroAnimationC = () => {
                     ></motion.div>
 
                     <motion.img
-                        src='/me.png'
+                        src={`${process.env.PUBLIC_URL}/me.png`}
                         alt='me'
                         style={{
                             position: "fixed",

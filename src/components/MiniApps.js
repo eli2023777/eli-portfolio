@@ -7,7 +7,7 @@ import '../css/miniApps.css';
 
 const slidesData = [
     {
-        imgSrc: '/images/TicTacToePrtSc.png',
+        imgSrc: '{`${process.env.PUBLIC_URL}/images/TicTacToePrtSc.png`}',
         title: 'Tic Tac Toe',
         description: 'lorem ipsum dolor sit amet, con',
         categories: ['Games'],
@@ -125,7 +125,7 @@ const MiniApps = () => {
                                 {slide.toolsIcons.map((tool, index) => (
                                     <span key={index} style={{ '--i': index + 1 }}>
                                         <img className='toolsIcons'
-                                            src={`/icons/img-${tool}.png`}
+                                            src={`${process.env.PUBLIC_URL}/icons/img-${tool}.png`}
                                             alt={tool} />
                                     </span>
                                 ))}
