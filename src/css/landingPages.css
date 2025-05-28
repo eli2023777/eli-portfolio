@@ -25,36 +25,51 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 
 .card img {
-    width: 100%;
-    height: 50%;
-    object-fit: cover;
+    height: 100vh;
+    /* object-fit: cover; */
     border-radius: 10px 10px 0px 0px;
-    cursor: pointer;
-    transition: height 1s ease-in-out;
+    transition: height 0.5s ease-in-out;
 }
 
-.card img:hover {
-    height: 100%;
-}
 
 .textArea {
-    height: 50%;
+    display: none;
+    /* height: 50%; */
     overflow: hidden;
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* background-color: #535252; */
+    /* color: #fff; */
+    /* transition: opacity 0.5s ease, transform 0.5s ease; */
 }
 
-.card img:hover+.textArea {
-    height: 30%;
-    opacity: 0;
+
+.textArea .buttonsCard {
+    margin: 1vw;
+}
+
+/* .card:active {
+    border: #000 1px solid;
+} */
+
+.card:hover img,
+.card.selected img {
+    height: 50%;
+}
+
+.card:hover .textArea,
+.card.selected .textArea {
+    display: block;
+    /* height: 30%; */
+    /* opacity: 0; */
     transform: translateY(20px);
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
-.card img:hover .card h3 {
+.card:hover .card h3 {
     width: 100%;
     height: 34px;
     margin-top: 37px;
@@ -89,21 +104,30 @@
 
 
 .card button {
-    margin-left: 123px;
+    /* margin-left: 123px;
     margin-top: 24px;
     width: 153px;
-    height: 30px;
+    height: 30px; */
+    width: 8vw;
     background: #1AE0EC 0% 0% no-repeat padding-box;
     border-radius: 15px;
     font: normal normal medium 14px/26px 'MyCustomFont';
-    letter-spacing: 0px;
     color: #2C2C2C;
     text-align: center;
     box-shadow: #000 0 2px 2px;
-    cursor: pointer;
+    margin-left: 1vw;
 }
 
-.card button:hover {
+.liveBtn {
+    margin-top: 1vw;
+}
+
+/* .card button:hover {
     width: 156px;
     height: 32px;
+} */
+
+.card.selected {
+    border: 2px solid #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
 }

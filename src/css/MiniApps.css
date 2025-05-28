@@ -310,6 +310,9 @@ main {
     }
 }
 
+
+
+
 @media (max-width: 520px) {
     .swiper-slide-active {
         width: 300px;
@@ -348,12 +351,6 @@ main {
 
 
 
-
-
-
-
-
-
 .swiperContainer {
     height: 200vw;
 }
@@ -383,6 +380,7 @@ main {
 }
 
 .toolsIcons {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
+
 }

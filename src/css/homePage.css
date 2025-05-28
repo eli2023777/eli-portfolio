@@ -172,26 +172,48 @@ footer,
 } */
 
 .iconsContainer {
-    height: 130px;
-    background-color: #ff0000;
-    box-shadow: 0px 3px 6px #00000029;
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
+    margin: auto;
+    width: 80vw;
+    text-align: center;
+    height: 120vh;
     justify-content: center;
     align-items: center;
     z-index: 9;
-    position: relative;
+    padding: 2vw;
+    /* position: relative; */
+}
+
+.iconsContainer h1 {
+    /* font-family: 'MyCustomFont', sans-serif; */
+    font-size: 4rem;
+    /* margin-bottom: 10vw; */
 }
 
 .iconsContainer br {
     display: none;
 }
 
-.iconsContainer img {
-    width: 100px;
-    height: 100px;
+.icon {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
 }
+
+.iconsContainer img {
+    width: 5vw;
+}
+
+.firstRowIcons,
+.secondRowIcons {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 7vw;
+    text-align: center;
+}
+
 
 .ProjectsButtons {
     display: flex;
@@ -273,15 +295,10 @@ footer,
 
 .textOnMe h2 {
     font: normal normal 900 60px/100px 'MyCustomFont';
-    /* color: #3A3A3A; */
 }
 
-.textOnMe p {
+.textOnMe .aboutMePar {
     width: 40vw;
-    /* width: 798px;
-    height: 200px; */
-    font: normal normal normal 20px/29px 'Abhaya Libre';
-    /* color: #3A3A3A; */
 }
 
 
@@ -301,6 +318,7 @@ footer,
     width: 265px;
     height: 45px;
 }
+
 
 
 /* .textProjects h2 {

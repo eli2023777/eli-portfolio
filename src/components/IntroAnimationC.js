@@ -25,7 +25,7 @@ const IntroAnimationC = () => {
 
     useEffect(() => {
         const unsubscribe = scrollYProgress.onChange((latest) => {
-            if (latest >= 0.4) {
+            if (latest >= 0.3) {
                 setTimeout(() => setOpacity(0), 200);
             } else {
                 setOpacity(1);
@@ -40,9 +40,14 @@ const IntroAnimationC = () => {
     const end = sectionTop + window.innerHeight;
     const scrollYProgressInSection = useTransform(scrollYProgress, [start, end], [0, 1]);
 
+    // const easedScroll = useTransform(scrollYProgressInSection, [0, 1], [0, 1], {
+    //     ease: [0.25, 0.1, 0.25, 1], // cubic-bezier easing (ease-out)
+    // });
+
+
     const textX = useTransform(scrollYProgressInSection, [0, 1], ["50%", "-300%"]);
     const blackScreenX = useTransform(scrollYProgressInSection, [0, 1], ["-110%", "0%"]);
-    const meImg = useTransform(scrollYProgressInSection, [0, 1], ["-50%", "7%"]);
+    const meImg = useTransform(scrollYProgressInSection, [0, 1], ["-50%", "15%"]);
     const newTextY = useTransform(scrollYProgressInSection, [0, 1], ["-50%", "50%"]);
 
 
@@ -70,12 +75,12 @@ const IntroAnimationC = () => {
                         alt='me'
                         style={{
                             position: "fixed",
-                            top: '10vh',
+                            top: '18vh',
                             left: meImg,
                             opacity: opacity,
                             zIndex: 1,
-                            width: "420px",
-                            height: "420px",
+                            width: "30vw",
+                            height: "60vh",
                             WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
                             maskImage: "radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%)",
                             // filter: "drop-shadow(0px 0px 20px rgba(0,0,0,0.5))"
@@ -85,7 +90,7 @@ const IntroAnimationC = () => {
                     <motion.h1
                         style={{
                             position: "fixed",
-                            top: "calc(50% - 2em)",
+                            top: "calc(70% - 2em)",
                             left: "calc(50% - 2em)",
                             transform: "translate(-50%, -50%)",
                             fontSize: "10rem",
@@ -124,11 +129,11 @@ const IntroAnimationC = () => {
                             }}
 
                         >
-                            Welcome to my portfolio
+                            Welcome
                             <br />
                             <br />
-                            <button></button>
-                            <button></button>
+                            to my portfolio
+
                         </motion.h1>
                     </div>
                 </div>

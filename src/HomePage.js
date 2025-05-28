@@ -31,34 +31,79 @@ const HomePage = () => {
 
       <IntroAnimationC />
 
-
-      <div style={{
+      {/* ICONS section */}
+      {/* <div style={{
         padding: "50px",
         background: "gray",
         height: "110vh",
         zIndex: 1000,
-        // backgroundColor: 'crimson'
 
-      }}>
+      }}>  */}
+      <div style={{
+        height: "110vh"
+      }} ></div>
 
-        <div class="iconsContainer">
-          <div class="firstRowIcons">
+      <div class="iconsContainer">
+        <h1>My Developer Arsenal</h1>
+
+
+        <div class="firstRowIcons">
+          <div className="icon">
             <img src="/icons/img-HTML.png" alt="html" />
+            <h8>HTML</h8>
+          </div>
+
+          <div className="icon">
             <img src="/icons/img-CSS.png" alt="css" />
+            <h8>CSS</h8>
+          </div>
+
+          <div className="icon">
             <img src="/icons/img-Bootstrap.png" alt="bootstrap" />
+            <h8>Bootstrap</h8>
+          </div>
+
+          <div className="icon">
             <img src="/icons/img-JS.png" alt="js" />
-            {/* <img src="/icons/img-OOP.png" alt="oop" /> */}
+            <h8>JavaScript</h8>
           </div>
-          <div class="secondRowIcons">
-            {/* <img src="/icons/img-ES6.png" alt="ES6" /> */}
-            <img src="/icons/img-TypeScript.png" alt="ts" />
-            {/* <img src="/icons/img-API.png" alt="api" /> */}
+
+          <div className="icon">
+            <img src="/icons/img-TS.png" alt="ts" />
+            <h8>TypeScript</h8>
+          </div>
+
+          {/* <img src="/icons/img-OOP.png" alt="oop" /> */}
+        </div>
+
+        <div class="secondRowIcons">
+          {/* <img src="/icons/img-ES6.png" alt="ES6" /> */}
+          {/* <img src="/icons/img-API.png" alt="api" /> */}
+          <div className="icon">
             <img src="/icons/img-React.png" alt="react" />
-            <img src="/icons/img-NodeJS.png" alt="node.js" />
-            <img src="/icons/img-NextJS.svg" alt="next.js" />
-            <img src="/icons/img-Git.png" alt="Git" />
-            <img src="/icons/img-mongoDB.png" alt="mongoDB" />
+            <h8>React</h8>
           </div>
+
+          <div className="icon">
+            <img src="/icons/img-NodeJS.png" alt="node.js" />
+            <h8>NodeJS</h8>
+          </div>
+
+          <div className="icon">
+            <img src="/icons/img-NextJS.svg" alt="next.js" />
+            <h8>NextJS</h8>
+          </div>
+
+          <div className="icon">
+            <img src="/icons/img-Git.png" alt="Git" />
+            <h8>Git</h8>
+          </div>
+
+          <div className="icon">
+            <img src="/icons/img-mongoDB.png" alt="mongoDB" />
+            <h8>MongoDB</h8>
+          </div>
+
         </div>
 
       </div>
@@ -143,7 +188,7 @@ const HomePage = () => {
         <img src="/me.jpeg" alt="Big me" />
         <div className="textOnMe">
           <h2>About me</h2>
-          <p>
+          <p className='aboutMePar'>
 
             A Fullstack Developer with experience working with React, Node.js, and MongoDB. I have a passion for learning and exploring new technologies, and I’m always looking for the most efficient way to solve problems and deliver excellent results. Over the years, I've worked on a variety of projects, including developing websites and both client-side and server-side software.
             <br />

@@ -3,49 +3,49 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import '../css/MiniApps.css';
+import '../css/miniApps.css';
 
 const slidesData = [
     {
         imgSrc: '/images/TicTacToePrtSc.png',
         title: 'Tic Tac Toe',
         description: 'lorem ipsum dolor sit amet, con',
-        categories: ['games'],
+        categories: ['Games'],
         toolsIcons: ['HTML', 'CSS', 'JS'],
     },
     {
         imgSrc: '/images/SimonGamePrtSc.png',
         title: 'Simon Game',
         description: 'lorem ipsum dolor sit amet, con',
-        categories: ['games'],
+        categories: ['Games'],
         toolsIcons: ['HTML', 'CSS', 'JS'],
     },
     {
         imgSrc: '/images/ShoppingListPrtSc.png',
         title: 'Shopping List',
         description: 'lorem ipsum dolor sit amet, con',
-        categories: ['games'],
+        categories: ['Apps'],
         toolsIcons: ['HTML', 'CSS', 'JS'],
     },
     {
         imgSrc: '/images/UsersManagerPrtSc.png',
         title: 'Users Manager',
         description: 'lorem ipsum dolor sit amet, con',
-        categories: ['games'],
+        categories: ['Apps'],
         toolsIcons: ['HTML', 'CSS', 'JS', 'TS'],
     },
     {
         imgSrc: '/images/screenBPrtSc.png',
         title: 'Screens Builder',
         description: 'lorem ipsum dolor sit amet, con',
-        categories: ['games'],
+        categories: ['Apps'],
         toolsIcons: ['HTML', 'CSS', 'JS'],
     },
     {
         imgSrc: '/images/worldClockPrtSc.png',
         title: 'World Clocks',
         description: 'lorem ipsum dolor sit amet, con',
-        categories: ['games'],
+        categories: ['Apps'],
         toolsIcons: ['HTML', 'CSS', 'JS'],
     },
 ];

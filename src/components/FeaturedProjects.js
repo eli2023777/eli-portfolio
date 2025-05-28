@@ -15,9 +15,14 @@ const FeaturedProjects = () => {
                 />
                 <div className="text">
                     <h3>Events site</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Eum labore <br /> sapiente modi amet saepe illo dignissimos, consectetur suscipit delectus <br />vitae! Distinctio, modi. Quae quibusdam ullam vel sint quas dicta officiis!
+                    <p>A full-stack event management website, <br /> using React, Node.js, and
+                        MongoDB <br /> as my final project at HackerU College.
                     </p>
+                    <p>The application includes user and event management <br /> with a calendar feature integrated via a React library, <br /> allowing business users to create events and regular users <br /> to view and like them.
+                    </p>
+                    <p>This project demonstrates end-to-end development with a focus on interactive scheduling and role-based functionality.
+                    </p>
+
                     <button className='liveSiteBtn'>
                         <a target="_blank" rel="noreferrer" href="https://eli2023777.github.io/events-site/">
                             LIVE SITE
@@ -26,6 +31,11 @@ const FeaturedProjects = () => {
                     <button className='viewCodeBtn'>
                         <a target="_blank" rel="noreferrer" href="https://github.com/eli2023777/events-site">
                             VIEW CODE
+                        </a>
+                    </button>
+                    <button className='downloadBtn'>
+                        <a target="_blank" rel="noreferrer" href="">
+                            DOWNLOAD
                         </a>
                     </button>
                 </div>
@@ -41,8 +51,10 @@ const FeaturedProjects = () => {
                 />
                 <div className="text">
                     <h3>Bussiness Cards site</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Eum labore <br /> sapiente modi amet saepe illo dignissimos, consectetur suscipit delectus <br />vitae! Distinctio, modi. Quae quibusdam ullam vel sint quas dicta officiis!
+                    <p>
+                        A responsive business card website using React, part of my studies at
+                        HackerU. This project includes features for creating, editing, and organizing business
+                        cards, focusing on a smooth and user-friendly interface.
                     </p>
                     <button className='liveSiteBtn'>
                         <a target="_blank" rel="noreferrer"
@@ -52,6 +64,12 @@ const FeaturedProjects = () => {
                     <button className='viewCodeBtn'>
                         <a target="_blank" rel="noreferrer"
                             href="https://github.com/eli2023777/my-cards">VIEW CODE</a>
+                    </button>
+
+                    <button className='downloadBtn'>
+                        <a target="_blank" rel="noreferrer" href="">
+                            DOWNLOAD
+                        </a>
                     </button>
                 </div>
             </div>
@@ -65,12 +83,20 @@ const FeaturedProjects = () => {
                 />
                 <div className="text">
                     <h3>CRUD API</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Eum labore <br /> sapiente modi amet saepe illo dignissimos, consectetur suscipit delectus <br />vitae! Distinctio, modi. Quae quibusdam ullam vel sint quas dicta officiis!
+                    <p>
+                        A server-side application with Node.js and MongoDB <br /> for user and card
+                        management, allowing secure CRUD operations and user authentication.
+                        <br /> This project emphasizes efficient backend structure <br /> and data handling.
                     </p>
                     <button className='viewCodeBtn'>
                         <a target="_blank" rel="noreferrer" href="https://github.com/eli2023777/NodeJS-Project">
                             VIEW CODE
+                        </a>
+                    </button>
+
+                    <button className='downloadBtn'>
+                        <a target="_blank" rel="noreferrer" href="">
+                            DOWNLOAD
                         </a>
                     </button>
                 </div>
