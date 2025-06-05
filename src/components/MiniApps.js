@@ -5,46 +5,54 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import '../css/miniApps.css';
 
+import { useTranslation } from 'react-i18next';
+
+
 const slidesData = [
     {
-        imgSrc: '{`${process.env.PUBLIC_URL}/images/TicTacToePrtSc.png`}',
-        title: 'Tic Tac Toe',
-        description: 'lorem ipsum dolor sit amet, con',
+        imgSrc: `${process.env.PUBLIC_URL}/images/TicTacToePrtSc.png`,
+        // title: 'Tic Tac Toe',
+        key: 'ticTacToe',
         categories: ['Games'],
         toolsIcons: ['HTML', 'CSS', 'JS'],
     },
     {
-        imgSrc: '/images/SimonGamePrtSc.png',
-        title: 'Simon Game',
-        description: 'lorem ipsum dolor sit amet, con',
+        imgSrc: `${process.env.PUBLIC_URL}/images/SimonGamePrtSc.png`,
+        // title: 'Simon Game',
+        key: 'simonGame',
+
         categories: ['Games'],
         toolsIcons: ['HTML', 'CSS', 'JS'],
     },
     {
-        imgSrc: '/images/ShoppingListPrtSc.png',
-        title: 'Shopping List',
-        description: 'lorem ipsum dolor sit amet, con',
+        imgSrc: `${process.env.PUBLIC_URL}/images/ShoppingListPrtSc.png`,
+        // title: 'Shopping List',
+        key: 'shoppingList',
+
         categories: ['Apps'],
         toolsIcons: ['HTML', 'CSS', 'JS'],
     },
     {
-        imgSrc: '/images/UsersManagerPrtSc.png',
-        title: 'Users Manager',
-        description: 'lorem ipsum dolor sit amet, con',
+        imgSrc: `${process.env.PUBLIC_URL}/images/UsersManagerPrtSc.png`,
+        // title: 'Users Manager',
+        key: 'usersManager',
+
         categories: ['Apps'],
         toolsIcons: ['HTML', 'CSS', 'JS', 'TS'],
     },
     {
-        imgSrc: '/images/screenBPrtSc.png',
-        title: 'Screens Builder',
-        description: 'lorem ipsum dolor sit amet, con',
+        imgSrc: `${process.env.PUBLIC_URL}/images/screenBPrtSc.png`,
+        // title: 'Screens Builder',
+        key: 'screensBuilder',
+
         categories: ['Apps'],
         toolsIcons: ['HTML', 'CSS', 'JS'],
     },
     {
-        imgSrc: '/images/worldClockPrtSc.png',
-        title: 'World Clocks',
-        description: 'lorem ipsum dolor sit amet, con',
+        imgSrc: `${process.env.PUBLIC_URL}/images/worldClockPrtSc.png`,
+        // title: 'World Clocks',
+        key: 'worldClocks',
+
         categories: ['Apps'],
         toolsIcons: ['HTML', 'CSS', 'JS'],
     },
@@ -64,6 +72,8 @@ console.log(formatTitleForRepoUrl('la la'));
 const MiniApps = () => {
 
     const swiperWrappedRef = useRef(null);
+    const { t } = useTranslation();
+
 
     function adjustMargin() {
         const screenWidth = window.innerWidth;
@@ -133,18 +143,23 @@ const MiniApps = () => {
 
                             {/* </div> */}
                             <div className='title'>
-                                <h1>{slide.title}</h1>
+                                {/* <h1>{slide.title}</h1> */}
+                                <h1>{t(`miniApps.${slide.key}.title`)}</h1>
+
                             </div>
                             <div className="content">
                                 <div className="text-box">
-                                    <p>{slide.description}</p>
+                                    {/* <p>{slide.description}</p> */}
+                                    <p>{t(`miniApps.${slide.key}.description`)}</p>
+
                                 </div>
 
                                 <div className="footer">
                                     <div className="category">
                                         {slide.categories.map((category, index) => (
                                             <span key={index} style={{ '--i': index + 1 }}>
-                                                {category}
+                                                {/* {category} */}
+                                                <span>{t(`miniApps.${slide.key}.category`)}</span>
                                             </span>
                                         ))}
                                     </div>
@@ -155,7 +170,10 @@ const MiniApps = () => {
                                                 onClick={() => window.open(
                                                     `https://github.com/eli2023777/${formatTitleForRepoUrl(slide.title)}.git`,
                                                     '_blank', 'noopener,noreferrer')}
-                                            >View code</span>
+                                            >
+                                                {/* View code */}
+                                                {t('miniApps.buttons.viewCode')}
+                                            </span>
                                         </button>
 
                                         <button className='linkBtn'>
@@ -163,7 +181,11 @@ const MiniApps = () => {
                                                 onClick={() => window.open(
                                                     `https://eli2023777.github.io/${formatTitleForRepoUrl(slide.title)}/`,
                                                     '_blank', 'noopener,noreferrer')}
-                                            > Live site</span>
+                                            >
+                                                {/* Live site */}
+                                                {t('miniApps.buttons.liveSite')}
+
+                                            </span>
                                         </button>
                                     </div>
                                 </div>

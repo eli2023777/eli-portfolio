@@ -185,7 +185,7 @@ footer,
 
 .iconsContainer h1 {
     /* font-family: 'MyCustomFont', sans-serif; */
-    font-size: 4rem;
+    font-size: 3rem;
     /* margin-bottom: 10vw; */
 }
 
@@ -243,6 +243,11 @@ footer,
     /* color: #000; */
 }
 
+.projectSection h1 {
+    font-size: 3rem;
+}
+
+
 .projects {
     /* min-height: 200vh; */
     /* scroll-snap-align: start; */
@@ -276,21 +281,22 @@ footer,
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 50px;
+
+    gap: 10vw;
     z-index: 1;
     margin: auto;
 }
 
 
 .aboutMe img {
-    width: 35vw;
-    height: 100vh;
+    width: 30vw;
+    /* height: 60vh; */
     border-radius: 80px;
 }
 
 .textOnMe {
-    align-items: center;
-    height: 100vh;
+    /* align-items: center; */
+    /* height: 100vh; */
 }
 
 .textOnMe h2 {
@@ -299,6 +305,7 @@ footer,
 
 .textOnMe .aboutMePar {
     width: 40vw;
+    text-align: start;
 }
 
 
@@ -468,4 +475,15 @@ footer nav p {
     text-align: right;
     font: normal normal 300 20px/29px MyCustomFont;
     letter-spacing: 0;
+}
+
+
+button {
+    z-index: 10000 !important;
+    position: relative;
+}
+
+
+.languageImg {
+    width: 6vh;
 }

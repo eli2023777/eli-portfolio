@@ -1,0 +1,92 @@
+{
+    "home": {
+        "developerArsenal": "My Developer Arsenal",
+        "myWorks": "My works",
+        "featured": "Featured",
+        "miniApps": "Mini Apps",
+        "landingPages": "Landing Pages",
+        "aboutMe": "About me",
+        "aboutParagraphs": [
+            "A Fullstack Developer with experience working with React, Node.js, and MongoDB.  I have a passion for learning and exploring new technologies, and I’m always looking for the most efficient way to solve problems and deliver excellent results. During my time working in development, I've worked on a variety of projects, including developing websites and both client-side and server-side software.",
+            "Beyond my work, I love spending time in nature and working out at the gym. I believe that a combination of creativity, hard work, and persistence is the key to success.",
+            "If you're looking for a developer who works in an organized, professional manner and always seeks creative solutions, do not hesitate to send me a message!"
+        ]
+    },
+    "intro": {
+        "hi": "Hi!",
+        "name": "I'm Eli",
+        "welcome": "Welcome",
+        "portfolio": "to my portfolio"
+    },
+    "featured": {
+        "eventsSite": {
+            "title": "Events site",
+            "desc1": "A full-stack event management website, using React, Node.js, and MongoDB as my final project at HackerU College.",
+            "desc2": "The application includes user and event management with a calendar feature integrated via a React library, allowing business users to create events and regular users to view and like them.",
+            "desc3": "This project demonstrates end-to-end development with a focus on interactive scheduling and role-based functionality."
+        },
+        "cardsSite": {
+            "title": "Business Cards site",
+            "desc": "A responsive business card website using React, part of my studies at HackerU. This project includes features for creating, editing, and organizing business cards, focusing on a smooth and user-friendly interface."
+        },
+        "crudApi": {
+            "title": "CRUD API",
+            "desc": "A server-side application with Node.js and MongoDB for user and card management, allowing secure CRUD operations and user authentication. This project emphasizes efficient backend structure and data handling."
+        },
+        "liveSite": "LIVE SITE",
+        "viewCode": "VIEW CODE",
+        "download": "DOWNLOAD"
+    },
+    "miniApps": {
+        "buttons": {
+            "viewCode": "View Code",
+            "liveSite": "Live Site"
+        },
+        "ticTacToe": {
+            "title": "Tic Tac Toe",
+            "description": "A classic game against the computer",
+            "category": "Games"
+        },
+        "simonGame": {
+            "title": "Simon Game",
+            "description": "Remember the sequence – a colorful memory game",
+            "category": "Games"
+        },
+        "shoppingList": {
+            "title": "Shopping List",
+            "description": "Easily manage your shopping",
+            "category": "Apps"
+        },
+        "usersManager": {
+            "title": "Users Manager",
+            "description": "A system to manage and add users",
+            "category": "Apps"
+        },
+        "screensBuilder": {
+            "title": "Screens Builder",
+            "description": "A tool for building basic user interfaces",
+            "category": "Apps"
+        },
+        "worldClocks": {
+            "title": "World Clocks",
+            "description": "Check the time in cities around the world",
+            "category": "Apps"
+        }
+    },
+    "landingPages": {
+        "title": "Landing Pages",
+        "cards": {
+            "goodMorning": "Good Morning",
+            "discover": "Discover the World",
+            "outside": "Outside the Box",
+            "letUsLeadPink": "Let Us Lead - Pink",
+            "hereAndNow": "Here and Now",
+            "letUsLeadBlue": "Let Us Lead - Blue"
+        },
+        "buttons": {
+            "liveSite": "Live Site",
+            "viewCode": "View Code",
+            "download": "Download"
+        }
+    }
+}

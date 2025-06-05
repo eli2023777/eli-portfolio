@@ -2,11 +2,17 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from "motion/react";
 import '../css/introAnimation.css'
 
+import { useTranslation } from 'react-i18next';
+
+
 const IntroAnimationC = () => {
     const { scrollYProgress } = useScroll();
     const sectionRef = useRef(null);
     const [sectionTop, setSectionTop] = useState(0);
     const [opacity, setOpacity] = useState(1);
+
+    const { t } = useTranslation();
+
 
 
     useEffect(() => {
@@ -25,7 +31,7 @@ const IntroAnimationC = () => {
 
     useEffect(() => {
         const unsubscribe = scrollYProgress.onChange((latest) => {
-            if (latest >= 0.3) {
+            if (latest >= 0.25) {
                 setTimeout(() => setOpacity(0), 200);
             } else {
                 setOpacity(1);
@@ -102,7 +108,9 @@ const IntroAnimationC = () => {
                             opacity: opacity,
                         }}
                     >
-                        Hi! <br /> I'm Eli
+                        {/* Hi! <br /> I'm Eli */}
+                        {t('intro.hi')} <br /> {t('intro.name')}
+
                     </motion.h1>
 
                     <div
@@ -129,10 +137,13 @@ const IntroAnimationC = () => {
                             }}
 
                         >
-                            Welcome
+                            {/* Welcome
                             <br />
                             <br />
-                            to my portfolio
+                            to my portfolio */}
+
+                            {t('intro.welcome')} <br /><br /> {t('intro.portfolio')}
+
 
                         </motion.h1>
                     </div>

@@ -9,6 +9,9 @@ import LandingPages from './components/LandingPages.js';
 import Button from 'react-bootstrap/Button';
 import './css/homePage.css';
 
+import { useTranslation } from 'react-i18next';
+
+
 
 
 const HomePage = () => {
@@ -16,6 +19,13 @@ const HomePage = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("featured");
   const contentRef = useRef(null);
+
+  const { t, i18n } = useTranslation();
+  const [languageSelected, setLanguageSelected] = useState(i18n.language);
+
+  // useEffect(() => {
+  //   setLanguageSelected()
+  // }, [languageSelected])
 
 
   // Scroll Into View
@@ -28,6 +38,35 @@ const HomePage = () => {
 
   return (
     <div>
+
+      {/* Change languege button */}
+      <div style={{
+        position: 'fixed',
+        display: 'flex',
+        flexDirection: 'column',
+        top: '20px',
+        right: '20px',
+        textAlign: 'center',
+        padding: '10px',
+        zIndex: '1000',
+        boxShadow: '0 0 10px rgba(0,0,0,0.2)'
+
+      }}>
+
+        <Button variant={languageSelected === 'en' ? 'primary' : 'none'}
+          onClick={() => { i18n.changeLanguage('en'); setLanguageSelected('en'); }}>
+          <img className='languageImg' src={`${process.env.PUBLIC_URL}/icons/us-flag.svg`} alt="us-flag" />
+        </Button>
+
+        <Button variant={languageSelected === 'he' ? 'primary' : 'none'}
+          onClick={() => { i18n.changeLanguage('he'); setLanguageSelected('he'); }}>
+          <img className='languageImg' src={`${process.env.PUBLIC_URL}/icons/israel-flag.svg`} alt="israel-flag" />
+        </Button>
+
+      </div>
+
+
+
 
       <IntroAnimationC />
 
@@ -43,34 +82,48 @@ const HomePage = () => {
         height: "110vh"
       }} ></div>
 
-      <div class="iconsContainer">
-        <h1>My Developer Arsenal</h1>
 
 
-        <div class="firstRowIcons">
+
+
+
+      <div className="iconsContainer">
+        {/* <h1>My Developer Arsenal</h1> */}
+        <h1>{t('home.developerArsenal')}</h1>
+
+
+
+
+        <div className="firstRowIcons">
           <div className="icon">
             <img src={`${process.env.PUBLIC_URL}/icons/img-HTML.png`} alt="html" />
-            <h8>HTML</h8>
+            <h6>HTML</h6>
           </div>
+          {/* 
+          <button onMouseEnter={() => console.log('blaaa')}
+            onClick={() => window.reload()}>Test Button</button> */}
+
+
+
 
           <div className="icon">
             <img src={`${process.env.PUBLIC_URL}/icons/img-CSS.png`} alt="css" />
-            <h8>CSS</h8>
+            <h6>CSS</h6>
           </div>
 
           <div className="icon">
             <img src={`${process.env.PUBLIC_URL}/icons/img-Bootstrap.png`} alt="bootstrap" />
-            <h8>Bootstrap</h8>
+            <h6>Bootstrap</h6>
           </div>
 
           <div className="icon">
             <img src={`${process.env.PUBLIC_URL}/icons/img-JS.png`} alt="js" />
-            <h8>JavaScript</h8>
+            <h6>JavaScript</h6>
           </div>
 
           <div className="icon">
             <img src={`${process.env.PUBLIC_URL}/icons/img-TS.png`} alt="ts" />
-            <h8>TypeScript</h8>
+            <h6>TypeScript</h6>
           </div>
 
           {/* <img src="/icons/img-OOP.png" alt="oop" /> */}
@@ -81,27 +134,27 @@ const HomePage = () => {
           {/* <img src="/icons/img-API.png" alt="api" /> */}
           <div className="icon">
             <img src={`${process.env.PUBLIC_URL}/icons/img-React.png`} alt="react" />
-            <h8>React</h8>
+            <h6>React</h6>
           </div>
 
           <div className="icon">
             <img src={`${process.env.PUBLIC_URL}/icons/img-NodeJS.png`} alt="node.js" />
-            <h8>NodeJS</h8>
+            <h6>NodeJS</h6>
           </div>
 
           <div className="icon">
             <img src={`${process.env.PUBLIC_URL}/icons/img-NextJS.svg`} alt="next.js" />
-            <h8>NextJS</h8>
+            <h6>NextJS</h6>
           </div>
 
           <div className="icon">
             <img src={`${process.env.PUBLIC_URL}/icons/img-Git.png`} alt="Git" />
-            <h8>Git</h8>
+            <h6>Git</h6>
           </div>
 
           <div className="icon">
             <img src={`${process.env.PUBLIC_URL}/icons/img-mongoDB.png`} alt="mongoDB" />
-            <h8>MongoDB</h8>
+            <h6>MongoDB</h6>
           </div>
 
         </div>
@@ -112,18 +165,23 @@ const HomePage = () => {
 
 
       <div className='projectSection'>
-        <h1>My works</h1>
+        {/* <h1>My works</h1> */}
+        <h1>{t('home.myWorks')}</h1>
+
+
 
         {/* Featured Projects  */}
         <div class="ProjectsButtons">
           <Button variant="light" className="border border-black"
-            onClick={() => handleClick("featured")}>Featured</Button>
+            onClick={() => handleClick("featured")}>{t('home.featured')}</Button>
+
 
           <Button variant="light" className="border border-black"
-            onClick={() => handleClick("mini")}>Mini Apps</Button>
+            onClick={() => handleClick("mini")}>{t('home.miniApps')}</Button>
+
 
           <Button variant="light" className="border border-black"
-            onClick={() => handleClick("landing")}>Landing Pages</Button>
+            onClick={() => handleClick("landing")}>{t('home.landingPages')}</Button>
         </div>
 
         <div ref={contentRef} style={{ marginTop: "40px" }}>
@@ -137,58 +195,26 @@ const HomePage = () => {
 
 
 
-
-
-
-      {/* <div className='project'>
-          <h3>Events site</h3>
-          <img src="/images/EventsSitePrtSc.png" alt="Events Site" />
-          <button>Live site</button>
-          <button>
-            <a target="_blank" rel="noreferrer" href="https://github.com/eli2023777/events-site">
-              View code
-            </a>
-          </button>
-        </div> */}
-
-      {/* 
-        <div className='project'>
-          <h3>Bussiness Cards site</h3> */}
-      {/* Img */}
-      {/* <button>Live site</button>
-          <button><a target="_blank" rel="noreferrer" href="https://github.com/eli2023777/my-cards">View code</a></button>
-        </div> */}
-
-      {/* <div className='project'>
-          <h3>CRUD API</h3> */}
-      {/* Img */}
-      {/* <button><a target="_blank" rel="noreferrer" href="https://github.com/eli2023777/NodeJS-Project">View code</a></button>
-        </div> */}
-
-
-      {/* <div className='project'> */}
-      {/* <h3>JS projects</h3> */}
-      {/* <div class="jsProjectsContainer"> */}
-      {/* </div> */}
-
-      {/* Img */}
-      {/* <button onClick={() => navigate('/js_projects')}></button> */}
-      {/* </div> */}
-
-
-
-      {/* Mini Apps */}
-      {/* <MiniApps /> */}
-
-      {/* Landing Pages */}
-      {/* -- PUT HERE Landing Pages -- */}
-
       {/* <!-- On me section --> */}
       <div class="aboutMe">
         <img src={`${process.env.PUBLIC_URL}/me.jpeg`} alt="Big me" />
         <div className="textOnMe">
-          <h2>About me</h2>
-          <p className='aboutMePar'>
+          {/* <h2>About me</h2> */}
+          <h2>{t('home.aboutMe')}</h2>
+
+
+          {t("home.aboutParagraphs", { returnObjects: true }).map((paragraph, index) => (
+            <p className='aboutMePar' key={index}>{paragraph}</p>
+          ))}
+
+
+          {/* <p className='aboutMePar'>
+
+
+            {t('home.aboutMeText')}
+            <br />
+            <br />
+            <br />
 
             A Fullstack Developer with experience working with React, Node.js, and MongoDB. I have a passion for learning and exploring new technologies, and I’m always looking for the most efficient way to solve problems and deliver excellent results. Over the years, I've worked on a variety of projects, including developing websites and both client-side and server-side software.
             <br />
@@ -200,7 +226,7 @@ const HomePage = () => {
             If you're looking for a developer who works in an organized, professional manner and always seeks creative solutions, do not hesitate to send me a message!
 
 
-          </p>
+          </p> */}
           {/* <p>נעים מאוד, קוראים לי אלי הולצמן ואני בן 22 מביתר עילית. אני מגיע מרקע של ישיבות חרדיות שלאחריהן למדתי
               בגרויות במכינה אקדמית של המרכז האקדמי לב. לאחר תקופה הבנתי שאני רוצה ללמוד ולהתעסק בתכנות
               ולמדתי קורס פול סטאק במכללת האקריו
@@ -217,6 +243,9 @@ const HomePage = () => {
 }
 
 export default HomePage;
+
+
+
 
 
 
@@ -292,6 +321,48 @@ export default HomePage;
 
 
 
+{/* <div className='project'>
+          <h3>Events site</h3>
+          <img src="/images/EventsSitePrtSc.png" alt="Events Site" />
+          <button>Live site</button>
+          <button>
+            <a target="_blank" rel="noreferrer" href="https://github.com/eli2023777/events-site">
+              View code
+            </a>
+          </button>
+        </div> */}
+
+{/* 
+        <div className='project'>
+          <h3>Bussiness Cards site</h3> */}
+{/* Img */ }
+{/* <button>Live site</button>
+          <button><a target="_blank" rel="noreferrer" href="https://github.com/eli2023777/my-cards">View code</a></button>
+        </div> */}
+
+{/* <div className='project'>
+          <h3>CRUD API</h3> */}
+{/* Img */ }
+{/* <button><a target="_blank" rel="noreferrer" href="https://github.com/eli2023777/NodeJS-Project">View code</a></button>
+        </div> */}
+
+
+{/* <div className='project'> */ }
+{/* <h3>JS projects</h3> */ }
+{/* <div class="jsProjectsContainer"> */ }
+{/* </div> */ }
+
+{/* Img */ }
+{/* <button onClick={() => navigate('/js_projects')}></button> */ }
+{/* </div> */ }
+
+
+
+{/* Mini Apps */ }
+{/* <MiniApps /> */ }
+
+{/* Landing Pages */ }
+{/* -- PUT HERE Landing Pages -- */ }
 
 
 
