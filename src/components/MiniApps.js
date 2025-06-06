@@ -126,10 +126,10 @@ const MiniApps = () => {
                     {slidesData.map((slide, index) => (
                         <SwiperSlide key={index}
                             onDoubleClick={() => window.open(
-                                `https://eli2023777.github.io/${formatTitleForRepoUrl(slide.title)}/`,
+                                `https://eli2023777.github.io/${formatTitleForRepoUrl(t(`miniApps.${slide.key}.title`))}/`,
                                 '_blank', 'noopener,noreferrer')}
                         >
-                            <img src={slide.imgSrc} alt={slide.title} />
+                            <img src={slide.imgSrc} alt={t(`miniApps.${slide.key}.title`)} />
 
                             <div className="tools">
                                 {slide.toolsIcons.map((tool, index) => (
@@ -168,7 +168,7 @@ const MiniApps = () => {
                                         <button className='linkBtn'>
                                             <span className='label'
                                                 onClick={() => window.open(
-                                                    `https://github.com/eli2023777/${formatTitleForRepoUrl(slide.title)}.git`,
+                                                    `https://github.com/eli2023777/${formatTitleForRepoUrl(t(`miniApps.${slide.key}.title`))}.git`,
                                                     '_blank', 'noopener,noreferrer')}
                                             >
                                                 {/* View code */}
@@ -179,7 +179,7 @@ const MiniApps = () => {
                                         <button className='linkBtn'>
                                             <span className='label'
                                                 onClick={() => window.open(
-                                                    `https://eli2023777.github.io/${formatTitleForRepoUrl(slide.title)}/`,
+                                                    `https://eli2023777.github.io/${formatTitleForRepoUrl(t(`miniApps.${slide.key}.title`))}/`,
                                                     '_blank', 'noopener,noreferrer')}
                                             >
                                                 {/* Live site */}
