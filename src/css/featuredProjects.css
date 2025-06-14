@@ -4,7 +4,7 @@
     display: flex;
     gap: 30px;
     align-items: center;
-    text-align-last: left;
+    /* text-align-last: left; */
     justify-content: center;
 
 }
@@ -16,12 +16,11 @@
     cursor: pointer;
 }
 
-p {
-    text-align: left;
-}
+
 
 .text {
     width: 35vw;
+    text-align: start;
 }
 
 .text button {

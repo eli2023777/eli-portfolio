@@ -299,9 +299,6 @@ footer,
     /* height: 100vh; */
 }
 
-.textOnMe h2 {
-    font: normal normal 900 60px/100px 'MyCustomFont';
-}
 
 .textOnMe .aboutMePar {
     width: 40vw;
@@ -486,4 +483,51 @@ button {
 
 .languageImg {
     width: 6vh;
+}
+
+
+.contactContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.contactForm {
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    width: 80vw;
+    z-index: 1000;
+    position: relative;
+    margin-bottom: 10vh;
+}
+
+.contactForm .contactP {
+    margin: 8vh auto;
+    width: 40vw;
+}
+
+
+.message {
+    width: 30vw;
+}
+
+.letterContainer {
+    width: 20vw;
+}
+
+.headline {
+    font: normal normal 900 60px/100px 'MyCustomFont';
+}
+
+.form-control:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.25);
+    transition: all 0.3s ease;
+}
+
+.row {
+    width: 60vw;
+    margin: auto;
+    text-align: center;
 }

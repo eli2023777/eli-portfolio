@@ -66,8 +66,6 @@ const formatTitleForRepoUrl = (title) => {
     ].join("-");
 };
 
-console.log(formatTitleForRepoUrl('la la'));
-
 
 const MiniApps = () => {
 

@@ -6,11 +6,11 @@ import JSProjects from './components/MiniApps.js';
 import FeaturedProjects from './components/FeaturedProjects'
 import MiniApps from './components/MiniApps.js';
 import LandingPages from './components/LandingPages.js';
-import Button from 'react-bootstrap/Button';
+import { Form, Button, Modal } from "react-bootstrap";
+
 import './css/homePage.css';
 
 import { useTranslation } from 'react-i18next';
-
 
 
 
@@ -23,9 +23,32 @@ const HomePage = () => {
   const { t, i18n } = useTranslation();
   const [languageSelected, setLanguageSelected] = useState(i18n.language);
 
-  // useEffect(() => {
-  //   setLanguageSelected()
-  // }, [languageSelected])
+  // For contact details
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // const [submitted, setSubmitted] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+
+  const handleSubmit = (e) => {
+    // setSubmitted(true);
+    setShowModal(true);
+
+  };
+
+  const handleClose = () => setShowModal(false);
+
+
 
 
   // Scroll Into View
@@ -35,6 +58,8 @@ const HomePage = () => {
       contentRef.current?.scrollIntoView({ behavior: "smooth" });
     }, 0);
   };
+
+
 
   return (
     <div>
@@ -89,7 +114,7 @@ const HomePage = () => {
 
       <div className="iconsContainer">
         {/* <h1>My Developer Arsenal</h1> */}
-        <h1>{t('home.developerArsenal')}</h1>
+        <h1 className='headline'>{t('home.developerArsenal')}</h1>
 
 
 
@@ -166,7 +191,7 @@ const HomePage = () => {
 
       <div className='projectSection'>
         {/* <h1>My works</h1> */}
-        <h1>{t('home.myWorks')}</h1>
+        <h1 className='headline'>{t('home.myWorks')}</h1>
 
 
 
@@ -200,7 +225,7 @@ const HomePage = () => {
         <img src={`${process.env.PUBLIC_URL}/me.jpeg`} alt="Big me" />
         <div className="textOnMe">
           {/* <h2>About me</h2> */}
-          <h2>{t('home.aboutMe')}</h2>
+          <h1 className='headline'>{t('home.aboutMe')}</h1>
 
 
           {t("home.aboutParagraphs", { returnObjects: true }).map((paragraph, index) => (
@@ -208,34 +233,147 @@ const HomePage = () => {
           ))}
 
 
-          {/* <p className='aboutMePar'>
-
-
-            {t('home.aboutMeText')}
-            <br />
-            <br />
-            <br />
-
-            A Fullstack Developer with experience working with React, Node.js, and MongoDB. I have a passion for learning and exploring new technologies, and I’m always looking for the most efficient way to solve problems and deliver excellent results. Over the years, I've worked on a variety of projects, including developing websites and both client-side and server-side software.
-            <br />
-            <br />
-            Beyond my technical work, I love spending time in nature, working out at the gym, building relationships with people, and growing personally. I believe that a combination of creativity, hard work, and persistence is the key to success.
-            <br />
-            <br />
-
-            If you're looking for a developer who works in an organized, professional manner and always seeks creative solutions, do not hesitate to send me a message!
-
-
-          </p> */}
-          {/* <p>נעים מאוד, קוראים לי אלי הולצמן ואני בן 22 מביתר עילית. אני מגיע מרקע של ישיבות חרדיות שלאחריהן למדתי
-              בגרויות במכינה אקדמית של המרכז האקדמי לב. לאחר תקופה הבנתי שאני רוצה ללמוד ולהתעסק בתכנות
-              ולמדתי קורס פול סטאק במכללת האקריו
-            </p> */}
-          {/* </div>
-        </div> */}
-
         </div >
       </div >
+
+
+
+      {/* <-- contact --> */}
+
+      <div id="contactContainer">
+        <div class="letterContainer">
+          <img src={`${process.env.PUBLIC_URL}/images/letter.png`} alt="Letter" />
+        </div>
+
+        {/* Form */}
+        <Form className='contactForm'
+          action="https://formsubmit.co/eli770440@gmail.com"
+          method="post"
+          target="hidden_iframe"
+          onSubmit={handleSubmit}
+        >
+          <h1 className='headline'>
+            {t("home.contact.h3")}
+          </h1>
+
+          {t("home.contact.p", { returnObjects: true })
+            .map((line, index) => (<p className='contactP' key={index}>{line}</p>))}
+
+          <div className="row">
+            <div className="col-md-6 mb-3">
+              <Form.Group className="mb-3" controlId="formBasicName">
+                <Form.Control type="name" placeholder={t("home.contact.name")}
+                  name='name' onChange={handleChange} value={formData.name}
+                  required
+                />
+              </Form.Group>
+            </div>
+
+            <div className="col-md-6 mb-3">
+
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Control type="email"
+                  name='email' onChange={handleChange} value={formData.email}
+                  placeholder={t("home.contact.email")} required
+                />
+
+              </Form.Group>
+            </div>
+
+            <div className="col-md-6 mb-3">
+
+              <Form.Group className="mb-3" controlId="formBasicPhone">
+                <Form.Control type="phone"
+                  name='phone' onChange={handleChange} value={formData.phone}
+                  placeholder={t("home.contact.phone")}
+                />
+              </Form.Group>
+            </div>
+
+            <div className="col-md-12 mb-3">
+
+              <Form.Group className="mb-3" controlId="formBasicMessage">
+                <Form.Control as="textarea" rows={4}
+                  name='message' onChange={handleChange} value={formData.message}
+                  placeholder={t("home.contact.message")} required
+                />
+                <Form.Text className="text-muted">
+                </Form.Text>
+              </Form.Group>
+            </div>
+
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+          </div>
+
+          <Button variant="primary" type="submit">
+            {t("home.contact.submit")}
+          </Button>
+
+          {/* Prevent page transition  */}
+          <iframe name="hidden_iframe" style={{ display: "none" }}></iframe>
+
+          {/* Pop-Up Modal */}
+          <Modal show={showModal} onHide={handleClose} centered backdrop="static">
+            <Modal.Header>
+              <Modal.Title>
+                {t("home.contact.success.t")}
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              {t("home.contact.success.b")}
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="primary" onClick={handleClose}>
+                אישור
+              </Button>
+            </Modal.Footer>
+          </Modal>
+
+          {/* {submitted && (
+            <Alert variant="success" className="mt-3">
+              {t("home.contact.success", { returnObjects: true })
+                .map((line, index) => (<p key={index}>{line}</p>))}
+            </Alert>
+          )} */}
+        </Form>
+
+
+
+        {/* <label>
+          {t("home.contact.name")}
+        </label>
+        <br />
+        <input type="text" name="name" id="name" />
+        <br />
+        <label>
+          {t("home.contact.email")}
+        </label>
+        <br />
+        <input type="email" name="email" id="email" />
+        <br />
+        <label>
+          {t("home.contact.phone")}
+        </label>
+        <br />
+        <input type="phone" name="phone" id="phone" />
+        <br />
+        <label>
+          {t("home.contact.message")}
+        </label>
+
+        <br />
+        <textarea className='message' name="message"></textarea>
+        <br /><br />
+        <input type="hidden" name="_next"
+          value="https://eli2023777.github.io/thankUFile/"
+        />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <button type="submit" id="submit">שליחה</button>
+      </form> */}
+
+      </div>
     </div >
 
 

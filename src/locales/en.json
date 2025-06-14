@@ -10,7 +10,24 @@
             "A Fullstack Developer with experience working with React, Node.js, and MongoDB.  I have a passion for learning and exploring new technologies, and I’m always looking for the most efficient way to solve problems and deliver excellent results. During my time working in development, I've worked on a variety of projects, including developing websites and both client-side and server-side software.",
             "Beyond my work, I love spending time in nature and working out at the gym. I believe that a combination of creativity, hard work, and persistence is the key to success.",
             "If you're looking for a developer who works in an organized, professional manner and always seeks creative solutions, do not hesitate to send me a message!"
-        ]
+        ],
+        "contact": {
+            "h3": "Get in Touch",
+            "p": [
+                "If you want to chat, ask something, or share an idea — I’m here.",
+                "Feel free to reach out via the form below or email,",
+                "I’d be happy to hear from you!"
+            ],
+            "name": "Name",
+            "phone": "Phone",
+            "email": "Email",
+            "message": "Message",
+            "submit": "Submit",
+            "success": {
+                "t": "Thank you for reaching out to me! 😊",
+                "b": "I received your message and will get back to you soon."
+            }
+        }
     },
     "intro": {
         "hi": "Hi!",
