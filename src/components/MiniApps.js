@@ -6,7 +6,7 @@ import 'swiper/css/pagination';
 import '../css/miniApps.css';
 
 import { useTranslation } from 'react-i18next';
-
+import i18n from '../i18n';
 
 const slidesData = [
     {
@@ -73,6 +73,30 @@ const MiniApps = () => {
     const { t } = useTranslation();
 
 
+    const [dir, setDir] = useState(i18n.language === 'he' ? 'rtl' : 'ltr');
+
+    useEffect(() => {
+        const handleLanguageChanged = (lng) => {
+            const newDir = lng === 'he' ? 'rtl' : 'ltr';
+            setDir(newDir);
+
+            if (swiperWrappedRef.current && swiperWrappedRef.current.swiper) {
+                swiperWrappedRef.current.swiper.el.dir = newDir;
+            }
+            if (
+                swiperWrappedRef.current &&
+                swiperWrappedRef.current.swiper &&
+                typeof swiperWrappedRef.current.swiper.update === 'function'
+            ) {
+                swiperWrappedRef.current.swiper.update();
+            }
+        };
+        i18n.on('languageChanged', handleLanguageChanged);
+        return () => i18n.off('languageChanged', handleLanguageChanged);
+    }, []);
+
+
+
     function adjustMargin() {
         const screenWidth = window.innerWidth;
         if (swiperWrappedRef.current) {
@@ -99,12 +123,16 @@ const MiniApps = () => {
             <div className='container'>
 
                 <Swiper
+                    key={dir}
+                    ref={swiperWrappedRef}
                     modules={[Pagination]}
                     grabCursor
                     initialSlide={2}
                     centeredSlides
                     slidesPerView='auto'
                     speed={800}
+                    dir={dir}
+                    rtl={dir === 'rtl'}
                     slideToClickedSlide
                     pagination={{ clickable: true }}
                     breakpoints={{
