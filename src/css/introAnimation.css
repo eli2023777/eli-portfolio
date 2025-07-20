@@ -1,4 +1,11 @@
 .introContainer {
-    font-family: 'MyCustomFont', sans-serif;
     width: 100vw;
+}
+
+.lang-he .introHeadline {
+    font-family: 'VarelaRound', sans-serif;
+}
+
+.lang-en .introHeadline {
+    font-family: 'BrownSugar', sans-serif;
 }

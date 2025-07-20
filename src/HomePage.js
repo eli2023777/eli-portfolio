@@ -17,11 +17,28 @@ import { useTranslation } from 'react-i18next';
 const HomePage = () => {
 
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState("featured");
+  const [activeBtn, setActiveBtn] = useState("featured");
   const contentRef = useRef(null);
+
 
   const { t, i18n } = useTranslation();
   const [languageSelected, setLanguageSelected] = useState(i18n.language);
+
+  useEffect(() => {
+    const body = document.body;
+
+    if (i18n.language === 'he') {
+      body.lang = 'he';
+      body.classList.remove('lang-en');
+      body.classList.add('lang-he');
+    } else {
+      body.lang = 'en';
+      body.classList.remove('lang-he');
+      body.classList.add('lang-en');
+    }
+  }, [i18n.language]);
+
+
 
   // For contact details
   const [formData, setFormData] = useState({
@@ -53,7 +70,7 @@ const HomePage = () => {
 
   // Scroll Into View
   const handleClick = (selectedView) => {
-    setActiveTab(selectedView);
+    setActiveBtn(selectedView);
     setTimeout(() => {
       contentRef.current?.scrollIntoView({ behavior: "smooth" });
     }, 0);
@@ -62,7 +79,7 @@ const HomePage = () => {
 
 
   return (
-    <div>
+    <>
 
       {/* Change languege button */}
       <div style={{
@@ -113,77 +130,82 @@ const HomePage = () => {
 
 
       <div className="iconsContainer">
-        {/* <h1>My Developer Arsenal</h1> */}
-        <h1 className='headline'>{t('home.developerArsenal')}</h1>
+        <div className="icons">
+
+          {/* <h1>My Developer Arsenal</h1> */}
+          <h1 className='headline'
+            style={{ lineHeight: '5vh' }}
+          >{t('home.developerArsenal')}</h1>
 
 
 
 
-        <div className="firstRowIcons">
-          <div className="icon">
-            <img src={`${process.env.PUBLIC_URL}/icons/img-HTML.png`} alt="html" />
-            <h6>HTML</h6>
-          </div>
-          {/* 
+          <div className="firstRowIcons">
+            <div className="icon">
+              <img src={`${process.env.PUBLIC_URL}/icons/img-HTML.png`} alt="html" />
+              <h6>HTML</h6>
+            </div>
+            {/* 
           <button onMouseEnter={() => console.log('blaaa')}
             onClick={() => window.reload()}>Test Button</button> */}
 
 
 
 
-          <div className="icon">
-            <img src={`${process.env.PUBLIC_URL}/icons/img-CSS.png`} alt="css" />
-            <h6>CSS</h6>
+            <div className="icon">
+              <img src={`${process.env.PUBLIC_URL}/icons/img-CSS.png`} alt="css" />
+              <h6>CSS</h6>
+            </div>
+
+            <div className="icon">
+              <img src={`${process.env.PUBLIC_URL}/icons/img-Bootstrap.png`} alt="bootstrap" />
+              <h6>Bootstrap</h6>
+            </div>
+
+            <div className="icon">
+              <img src={`${process.env.PUBLIC_URL}/icons/img-JS.png`} alt="js" />
+              <h6>JavaScript</h6>
+            </div>
+
+            <div className="icon">
+              <img src={`${process.env.PUBLIC_URL}/icons/img-TS.png`} alt="ts" />
+              <h6>TypeScript</h6>
+            </div>
+
+            {/* <img src="/icons/img-OOP.png" alt="oop" /> */}
           </div>
 
-          <div className="icon">
-            <img src={`${process.env.PUBLIC_URL}/icons/img-Bootstrap.png`} alt="bootstrap" />
-            <h6>Bootstrap</h6>
+          <div class="secondRowIcons">
+            {/* <img src="/icons/img-ES6.png" alt="ES6" /> */}
+            {/* <img src="/icons/img-API.png" alt="api" /> */}
+            <div className="icon">
+              <img src={`${process.env.PUBLIC_URL}/icons/img-React.png`} alt="react" />
+              <h6>React</h6>
+            </div>
+
+            <div className="icon">
+              <img src={`${process.env.PUBLIC_URL}/icons/img-NodeJS.png`} alt="node.js" />
+              <h6>NodeJS</h6>
+            </div>
+
+            <div className="icon">
+              <img src={`${process.env.PUBLIC_URL}/icons/img-NextJS.svg`} alt="next.js" />
+              <h6>NextJS</h6>
+            </div>
+
+            <div className="icon">
+              <img src={`${process.env.PUBLIC_URL}/icons/img-Git.png`} alt="Git" />
+              <h6>Git</h6>
+            </div>
+
+            <div className="icon">
+              <img src={`${process.env.PUBLIC_URL}/icons/img-mongoDB.png`} alt="mongoDB" />
+              <h6>MongoDB</h6>
+            </div>
+
           </div>
 
-          <div className="icon">
-            <img src={`${process.env.PUBLIC_URL}/icons/img-JS.png`} alt="js" />
-            <h6>JavaScript</h6>
-          </div>
-
-          <div className="icon">
-            <img src={`${process.env.PUBLIC_URL}/icons/img-TS.png`} alt="ts" />
-            <h6>TypeScript</h6>
-          </div>
-
-          {/* <img src="/icons/img-OOP.png" alt="oop" /> */}
         </div>
-
-        <div class="secondRowIcons">
-          {/* <img src="/icons/img-ES6.png" alt="ES6" /> */}
-          {/* <img src="/icons/img-API.png" alt="api" /> */}
-          <div className="icon">
-            <img src={`${process.env.PUBLIC_URL}/icons/img-React.png`} alt="react" />
-            <h6>React</h6>
-          </div>
-
-          <div className="icon">
-            <img src={`${process.env.PUBLIC_URL}/icons/img-NodeJS.png`} alt="node.js" />
-            <h6>NodeJS</h6>
-          </div>
-
-          <div className="icon">
-            <img src={`${process.env.PUBLIC_URL}/icons/img-NextJS.svg`} alt="next.js" />
-            <h6>NextJS</h6>
-          </div>
-
-          <div className="icon">
-            <img src={`${process.env.PUBLIC_URL}/icons/img-Git.png`} alt="Git" />
-            <h6>Git</h6>
-          </div>
-
-          <div className="icon">
-            <img src={`${process.env.PUBLIC_URL}/icons/img-mongoDB.png`} alt="mongoDB" />
-            <h6>MongoDB</h6>
-          </div>
-
-        </div>
-
       </div>
 
 
@@ -194,25 +216,37 @@ const HomePage = () => {
         <h1 className='headline'>{t('home.myWorks')}</h1>
 
 
-
         {/* Featured Projects  */}
         <div class="ProjectsButtons">
-          <Button variant="light" className="border border-black"
-            onClick={() => handleClick("featured")}>{t('home.featured')}</Button>
+          <Button
+            variant={activeBtn === 'featured' ? 'primary' : 'light'}
+            className="border border-black"
+            onClick={() => handleClick("featured")}>
+            {t('home.featured')}
+          </Button>
 
 
-          <Button variant="light" className="border border-black"
-            onClick={() => handleClick("mini")}>{t('home.miniApps')}</Button>
+          <Button
+            variant={activeBtn === 'mini' ? 'primary' : 'light'}
+            className="border border-black"
+            onClick={() => handleClick("mini")}>
+            {t('home.miniApps')}
+          </Button>
 
 
-          <Button variant="light" className="border border-black"
-            onClick={() => handleClick("landing")}>{t('home.landingPages')}</Button>
+          <Button
+            variant={activeBtn === 'landing' ? 'primary' : 'light'}
+
+            className="border border-black"
+            onClick={() => handleClick("landing")}>
+            {t('home.landingPages')}
+          </Button>
         </div>
 
         <div ref={contentRef} style={{ marginTop: "40px" }}>
-          {activeTab === "featured" && <FeaturedProjects />}
-          {activeTab === "mini" && <MiniApps />}
-          {activeTab === "landing" && <LandingPages />}
+          {activeBtn === "featured" && <FeaturedProjects />}
+          {activeBtn === "mini" && <MiniApps />}
+          {activeBtn === "landing" && <LandingPages />}
         </div>
       </div>
 
@@ -329,52 +363,108 @@ const HomePage = () => {
               </Button>
             </Modal.Footer>
           </Modal>
-
-          {/* {submitted && (
-            <Alert variant="success" className="mt-3">
-              {t("home.contact.success", { returnObjects: true })
-                .map((line, index) => (<p key={index}>{line}</p>))}
-            </Alert>
-          )} */}
         </Form>
 
 
 
-        {/* <label>
-          {t("home.contact.name")}
-        </label>
-        <br />
-        <input type="text" name="name" id="name" />
-        <br />
-        <label>
-          {t("home.contact.email")}
-        </label>
-        <br />
-        <input type="email" name="email" id="email" />
-        <br />
-        <label>
-          {t("home.contact.phone")}
-        </label>
-        <br />
-        <input type="phone" name="phone" id="phone" />
-        <br />
-        <label>
-          {t("home.contact.message")}
-        </label>
 
-        <br />
-        <textarea className='message' name="message"></textarea>
-        <br /><br />
-        <input type="hidden" name="_next"
-          value="https://eli2023777.github.io/thankUFile/"
-        />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="false" />
-        <button type="submit" id="submit">שליחה</button>
-      </form> */}
 
       </div>
-    </div >
+
+
+      {/* <!-- Footer --> */}
+      <footer>
+        <nav>
+
+          {/* <!-- linkedin --> */}
+          <div className="iconContainer">
+            <button className='FooterIconBtn'><a href="https://www.linkedin.com/in/eli-holzman"
+              target="_blank" rel="noopener noreferrer"
+            >
+              <img
+                src={`${process.env.PUBLIC_URL}/icons/footer/awesome-linkedin-in.png`} alt="linkedin" />
+            </a></button>
+            <p>eli-holzman</p>
+          </div>
+
+          {/* <!-- githubb --> */}
+          <div class="iconContainer">
+            <button className='FooterIconBtn'><a href="">
+              <img
+                src={`${process.env.PUBLIC_URL}/icons/footer/github.png`} alt="location" />
+            </a></button>
+            <p>eli2023777</p>
+          </div>
+
+          {/* <!-- Location --> */}
+          <div class="iconContainer">
+            <button className='FooterIconBtn'>
+              <a href="https://maps.app.goo.gl/YFUxwuChCffu68LQ6"
+                target="_blank"
+                rel="noopener noreferrer">
+                <img src={`${process.env.PUBLIC_URL}/icons/footer/location.png`} alt="location" />
+              </a>
+            </button>
+            <p>
+              {t("home.footer.location")}
+            </p>
+          </div>
+
+          {/* <!-- email --> */}
+          <div class="iconContainer">
+            <button className='FooterIconBtn'><a class="button" href="mailto:eli770440@gmail.com"
+              target="_blank" rel="noopener noreferrer"
+            >
+              <img src={`${process.env.PUBLIC_URL}/icons/footer/simple-email.png`} alt="simple-email" />
+            </a></button>
+            <p>eli770440@gmail.com</p>
+          </div>
+
+          {/* <!-- whatsapp --> */}
+          <div class="iconContainer">
+            <button className='FooterIconBtn'><a href="https://wa.me/+972587701440"
+              target="_blank" rel="noopener noreferrer"
+            >
+              <img src={`${process.env.PUBLIC_URL}/icons/footer/simple-whatsapp.png`} alt="simple-whatsapp" />
+            </a></button>
+            <p>
+              {t("home.footer.phone")}
+            </p>
+          </div>
+
+          {/* <!-- phone --> */}
+          {/* <div class="iconContainer">
+            <button className='FooterIconBtn'><a href="tel:+972587701440"
+              target="_blank" rel="noopener noreferrer"
+            >
+              <img src={`${process.env.PUBLIC_URL}/icons/footer/simple-phone.png`} alt="simple-phone" />
+            </a></button>
+          </div> */}
+
+
+
+        </nav>
+
+      </footer>
+
+      {/* <!-- Under footer --> */}
+      <div class="underFooter">
+        <p class="leftP">
+          {t("home.footer.name")}
+        </p>
+        <p class="rightP">
+          {t("home.footer.copyright")}
+          &copy; {new Date().getFullYear()}
+
+        </p>
+      </div>
+
+
+
+
+
+
+    </ >
 
 
   );

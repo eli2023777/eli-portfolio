@@ -1,19 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=MyCustomFont:wght@100;200;300;400;500;600;700;800;900&family=Nunito+Sans:ital,opsz,wght@1,6..12,600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=MyCustomFont:wght@100;200;300;400;500;600;700;800;900&family=Nunito+Sans:ital,opsz,wght@1,6..12,600&display=swap'); */
+
+/* @font-face {
+    font-family: 'MyCustomFont'; */
+/* שם הפונט */
+/* src: url('/public/fonts/brown-sugar.ttf') format('truetype'); */
+/* src: url('/public/fonts/VarelaRound-Regular.ttf') format('truetype'); */
+
+
+/* src: url('/public/fonts/SourGummy-VariableFont_wdth,wght.ttf') format('truetype'); */
+/* src: url('/public/fonts/SourGummy-Italic-VariableFont_wdth,wght.ttf') format('truetype'); */
+/* נתיב לקובץ הפונט */
+/* font-weight: normal;
+    font-style: normal;
+} */
+
 
 @font-face {
-    font-family: 'MyCustomFont';
-    /* שם הפונט */
+    font-family: 'BrownSugar';
     src: url('/public/fonts/brown-sugar.ttf') format('truetype');
-    /* נתיב לקובץ הפונט */
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'VarelaRound';
+    src: url('/public/fonts/VarelaRound-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 
 @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap');
 
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
+}
+
+:root {
+    --footer-clr: #E0FFE0;
+    --footer-clr: #FDE2E2;
+    --footer-clr: #FFFACD;
 }
 
 
@@ -23,6 +51,14 @@ body {
     overflow-x: hidden;
     color: #000;
     /* height: 1000vh; */
+}
+
+.lang-he .headline {
+    font-family: 'VarelaRound', sans-serif;
+}
+
+.lang-en .headline {
+    font-family: 'BrownSugar', sans-serif;
 }
 
 /* 
@@ -143,18 +179,17 @@ footer,
     position: absolute;
 }
 
-.headlineHeader {
+/* .headline {
     right: 0;
 }
 
-.headlineHeader {
+.headline {
     text-align: center;
     font-family: 'MyCustomFont', sans-serif;
-    /* font: normal normal 900 80px/118px 'MyCustomFont'; */
+    font: normal normal 900 200px/118px 'MyCustomFont';
     letter-spacing: 0px;
-    /* color: #3A3A3A; */
     margin-bottom: 8px;
-}
+} */
 
 .textHeader {
     left: 0;
@@ -171,25 +206,26 @@ footer,
     text-align: center;
 } */
 
-.iconsContainer {
+
+
+.icons {
     margin: auto;
     width: 80vw;
     text-align: center;
-    height: 120vh;
+    height: 100vh;
     justify-content: center;
     align-items: center;
     z-index: 9;
     padding: 2vw;
-    /* position: relative; */
 }
 
-.iconsContainer h1 {
+.icons h1 {
     /* font-family: 'MyCustomFont', sans-serif; */
-    font-size: 3rem;
+    /* font-size: 3rem; */
     /* margin-bottom: 10vw; */
 }
 
-.iconsContainer br {
+.icons br {
     display: none;
 }
 
@@ -200,7 +236,7 @@ footer,
     gap: 1vw;
 }
 
-.iconsContainer img {
+.icons img {
     width: 5vw;
 }
 
@@ -232,20 +268,20 @@ footer,
     /* height: 500vh; */
     padding: 100px;
     position: relative;
-    gap: 30px;
+    /* gap: 30px; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    /* gap: 50px; */
     z-index: 1;
-    margin: auto;
+    margin: 30vh auto;
     background-color: #fff;
     /* color: #000; */
 }
 
-.projectSection h1 {
+/* .projectSection h1 {
     font-size: 3rem;
-}
+} */
 
 
 .projects {
@@ -266,6 +302,7 @@ footer,
     padding: 20px 20px 20px 20px;
     height: 100vh;
 } */
+
 
 
 
@@ -426,9 +463,10 @@ textarea {
 }
 
 footer {
-    height: 200px;
-    background: #1AE0EC;
-    padding: 50px;
+    /* height: 200px; */
+    /* background: #1AE0EC; */
+    background-color: var(--footer-clr);
+    padding: 5vh;
 }
 
 footer nav {
@@ -441,37 +479,56 @@ footer nav {
 
 footer nav p {
     margin-top: 20px;
-    font: normal normal normal 14px/21px 'MyCustomFont';
+    font: normal normal normal 14px/21px;
+    font-family: 'Inter', sans-serif;
     letter-spacing: 0px;
     color: #2C2C2C;
 }
 
+.FooterIconBtn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.FooterIconBtn img {
+    display: block;
+    width: 40px;
+    height: auto;
+}
+
 .underFooter {
-    height: 51px;
+    height: 9vh;
     background: #000;
-    border-bottom: 6px solid #1AE0EC;
+    border-bottom: 6px solid var(--footer-clr);
     display: flex;
     flex-direction: row;
     gap: 75vw;
     align-items: center;
+    justify-content: center;
 }
 
 .underFooter p {
-    color: #1AE0EC;
+    color: var(--footer-clr);
 }
 
 .underFooter .leftP {
     margin-left: 29px;
     text-align: left;
-    font: normal normal normal 20px/29px MyCustomFont;
+    font: normal normal normal 18px/25px;
+    font-family: 'Inter', sans-serif;
     letter-spacing: 0.5px;
+    margin: auto;
 }
 
 .underFooter .rightP {
     margin-right: 21px;
     text-align: right;
-    font: normal normal 300 20px/29px MyCustomFont;
+    font: normal normal 300 18px/25px;
+    font-family: 'Inter', sans-serif;
     letter-spacing: 0;
+    margin: auto;
 }
 
 
@@ -517,7 +574,9 @@ button {
 }
 
 .headline {
-    font: normal normal 900 60px/100px 'MyCustomFont';
+    /* font: normal normal 900 60px/100px 'MyCustomFont'; */
+    font-size: 60px;
+    line-height: 20vh;
 }
 
 .form-control:focus {

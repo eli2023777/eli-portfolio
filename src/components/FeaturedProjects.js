@@ -9,7 +9,8 @@ const FeaturedProjects = () => {
     const { t } = useTranslation();
 
     return (
-        <div>
+        <>
+        <div className='featuredContainer'>
 
             <div className='project'>
                 <img className='featuredProjectImg'
@@ -140,6 +141,7 @@ const FeaturedProjects = () => {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

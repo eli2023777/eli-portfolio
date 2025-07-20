@@ -26,7 +26,6 @@ const LandingPages = () => {
     return (
         <div>
             <div id="projectsContainer">
-                <h1>{t('landingPages.title')}</h1>
 
                 <div className="gridContainer">
                     {[

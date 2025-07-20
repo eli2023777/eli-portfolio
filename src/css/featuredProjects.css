@@ -1,12 +1,23 @@
-.project {
-    width: 90vw;
-    height: 100vh;
+.featuredContainer {
+    width: 100vw;
+    height: 350vh;
+    background: #F6F6F6;
+    background: #fffacd;
     display: flex;
-    gap: 30px;
-    align-items: center;
-    /* text-align-last: left; */
-    justify-content: center;
+    flex-direction: column;
+}
 
+.project {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.301);
+    border-radius: 15px;
+    width: 80vw;
+    height: 90vh;
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+    justify-content: center;
+    margin: 10vh auto;
 }
 
 .featuredProjectImg {

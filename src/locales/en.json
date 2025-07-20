@@ -27,6 +27,12 @@
                 "t": "Thank you for reaching out to me! 😊",
                 "b": "I received your message and will get back to you soon."
             }
+        },
+        "footer": {
+            "name": "Eli Holzman",
+            "copyright": "Copyright ",
+            "location": "Tel Aviv",
+            "phone": "+972-58-7701440"
         }
     },
     "intro": {

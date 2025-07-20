@@ -1,6 +1,6 @@
 #projectsContainer {
     width: 100vw;
-    height: 1300px;
+    height: 180vh;
     background: #F6F6F6;
     padding: 100px;
 }
@@ -8,7 +8,6 @@
 
 #projectsContainer .gridContainer {
     margin: auto;
-    margin-top: 100px;
     /* width: 100vw; */
     /* height: 1086px; */
     display: grid;

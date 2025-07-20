@@ -46,15 +46,14 @@ const IntroAnimationC = () => {
     const end = sectionTop + window.innerHeight;
     const scrollYProgressInSection = useTransform(scrollYProgress, [start, end], [0, 1]);
 
-    // const easedScroll = useTransform(scrollYProgressInSection, [0, 1], [0, 1], {
-    //     ease: [0.25, 0.1, 0.25, 1], // cubic-bezier easing (ease-out)
-    // });
-
 
     const textX = useTransform(scrollYProgressInSection, [0, 1], ["50%", "-300%"]);
     const blackScreenX = useTransform(scrollYProgressInSection, [0, 1], ["-110%", "0%"]);
     const meImg = useTransform(scrollYProgressInSection, [0, 1], ["-50%", "15%"]);
     const newTextY = useTransform(scrollYProgressInSection, [0, 1], ["-50%", "50%"]);
+
+
+
 
 
     return (
@@ -93,12 +92,13 @@ const IntroAnimationC = () => {
                         }}
                     ></motion.img>
 
-                    <motion.h1
+                    <motion.h1 className='introHeadline'
                         style={{
                             position: "fixed",
                             top: "calc(70% - 2em)",
                             left: "calc(50% - 2em)",
                             transform: "translate(-50%, -50%)",
+                            // transform: "translateX(-50%)",
                             fontSize: "10rem",
                             whiteSpace: "nowrap",
                             mixBlendMode: "difference",
@@ -109,9 +109,10 @@ const IntroAnimationC = () => {
                         }}
                     >
                         {/* Hi! <br /> I'm Eli */}
-                        {t('intro.hi')} <br /> {t('intro.name')}
+                        {t('intro.hi')}<br />{t('intro.name')}
 
                     </motion.h1>
+
 
                     <div
                         style={{
