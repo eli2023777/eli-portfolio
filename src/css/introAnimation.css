@@ -1,5 +1,6 @@
 .introContainer {
     width: 100vw;
+    z-index: 1000;
 }
 
 .lang-he .introHeadline {
@@ -8,4 +9,22 @@
 
 .lang-en .introHeadline {
     font-family: 'BrownSugar', sans-serif;
+}
+
+.languageButtons {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 15vh;
+    right: 2vw;
+    text-align: center;
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+}
+
+
+.languageImg {
+    width: 6vh;
 }

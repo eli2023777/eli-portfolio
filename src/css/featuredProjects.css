@@ -1,8 +1,7 @@
 .featuredContainer {
     width: 100vw;
     height: 350vh;
-    background: #F6F6F6;
-    background: #fffacd;
+    background-color: #2C2C2C;
     display: flex;
     flex-direction: column;
 }

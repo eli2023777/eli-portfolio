@@ -168,14 +168,12 @@ const MiniApps = () => {
                             </div>
 
                             {/* </div> */}
-                            <div className='title'>
-                                {/* <h1>{slide.title}</h1> */}
-                                <h1>{t(`miniApps.${slide.key}.title`)}</h1>
 
-                            </div>
                             <div className="content">
                                 <div className="text-box">
-                                    {/* <p>{slide.description}</p> */}
+
+                                    <h1>{t(`miniApps.${slide.key}.title`)}</h1>
+
                                     <p>{t(`miniApps.${slide.key}.description`)}</p>
 
                                 </div>

@@ -41,6 +41,11 @@
         "welcome": "Welcome",
         "portfolio": "to my portfolio"
     },
+    "navbar": {
+        "about": "About",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
     "featured": {
         "eventsSite": {
             "title": "Events site",

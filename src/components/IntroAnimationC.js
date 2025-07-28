@@ -4,15 +4,19 @@ import '../css/introAnimation.css'
 
 import { useTranslation } from 'react-i18next';
 
+import { Form, Button, Modal } from "react-bootstrap";
 
-const IntroAnimationC = () => {
+
+
+const IntroAnimationC = ({ setIntroFinished }) => {
     const { scrollYProgress } = useScroll();
     const sectionRef = useRef(null);
     const [sectionTop, setSectionTop] = useState(0);
     const [opacity, setOpacity] = useState(1);
 
-    const { t } = useTranslation();
-
+    // const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const [languageSelected, setLanguageSelected] = useState(i18n.language);
 
 
     useEffect(() => {
@@ -30,16 +34,25 @@ const IntroAnimationC = () => {
 
 
     useEffect(() => {
+
+
         const unsubscribe = scrollYProgress.onChange((latest) => {
-            if (latest >= 0.25) {
-                setTimeout(() => setOpacity(0), 200);
+            if (latest >= 0.15) {
+                setTimeout(() => {
+                    setOpacity(0);
+                    setIntroFinished(true);
+
+                }, 200);
+
             } else {
+                setIntroFinished(false);
+
                 setOpacity(1);
             }
         });
 
         return () => unsubscribe();
-    }, [scrollYProgress]);
+    }, [scrollYProgress, setIntroFinished]);
 
 
     const start = sectionTop;
@@ -59,6 +72,20 @@ const IntroAnimationC = () => {
     return (
         <div>
             <div className="introContainer" style={{ height: "400vh" }}>
+                <div className='languageButtons'
+                    style={{ opacity: opacity }}           >
+
+                    <Button variant={languageSelected === 'en' ? 'primary' : 'none'}
+                        onClick={() => { i18n.changeLanguage('en'); setLanguageSelected('en'); }}>
+                        <img className='languageImg' src={`${process.env.PUBLIC_URL}/icons/us-flag.svg`} alt="us-flag" />
+                    </Button>
+
+                    <Button variant={languageSelected === 'he' ? 'primary' : 'none'}
+                        onClick={() => { i18n.changeLanguage('he'); setLanguageSelected('he'); }}>
+                        <img className='languageImg' src={`${process.env.PUBLIC_URL}/icons/israel-flag.svg`} alt="israel-flag" />
+                    </Button>
+
+                </div>
                 <div ref={sectionRef} style={{ height: "100vh", background: "#fff", overflow: "hidden" }}>
                     <motion.div
                         style={{
@@ -70,7 +97,7 @@ const IntroAnimationC = () => {
                             backgroundColor: "black",
                             zIndex: 1,
                             opacity: opacity,
-                            transition: "opacity 0.5s ease-out"
+                            transition: "opacity 0.3s ease-out"
 
                         }}
                     ></motion.div>

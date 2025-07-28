@@ -40,6 +40,11 @@
         "welcome": "ברוכים הבאים",
         "portfolio": "לפורטפוליו שלי"
     },
+    "navbar": {
+        "about": "אודות",
+        "projects": "פרויקטים",
+        "contact": "צור קשר"
+    },
     "featured": {
         "eventsSite": {
             "title": "אתר אירועים",

@@ -1,8 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from "react-router";
-import { motion, useScroll, useTransform, useMotionValueEvent } from "motion/react";
 import IntroAnimationC from './components/IntroAnimationC';
-import JSProjects from './components/MiniApps.js';
+import Navbar from './components/Navbar.js';
 import FeaturedProjects from './components/FeaturedProjects'
 import MiniApps from './components/MiniApps.js';
 import LandingPages from './components/LandingPages.js';
@@ -16,9 +15,10 @@ import { useTranslation } from 'react-i18next';
 
 const HomePage = () => {
 
-  const navigate = useNavigate();
   const [activeBtn, setActiveBtn] = useState("featured");
   const contentRef = useRef(null);
+
+  const [introFinished, setIntroFinished] = useState(false);
 
 
   const { t, i18n } = useTranslation();
@@ -81,63 +81,28 @@ const HomePage = () => {
   return (
     <>
 
-      {/* Change languege button */}
+
+      {/* - INTRO - */}
+      {/* Intro Animation Component */}
+      <IntroAnimationC setIntroFinished={setIntroFinished} />
+
+      {/* - WHITE SPACE after intro - */}
       <div style={{
-        position: 'fixed',
-        display: 'flex',
-        flexDirection: 'column',
-        top: '20px',
-        right: '20px',
-        textAlign: 'center',
-        padding: '10px',
-        zIndex: '1000',
-        boxShadow: '0 0 10px rgba(0,0,0,0.2)'
-
-      }}>
-
-        <Button variant={languageSelected === 'en' ? 'primary' : 'none'}
-          onClick={() => { i18n.changeLanguage('en'); setLanguageSelected('en'); }}>
-          <img className='languageImg' src={`${process.env.PUBLIC_URL}/icons/us-flag.svg`} alt="us-flag" />
-        </Button>
-
-        <Button variant={languageSelected === 'he' ? 'primary' : 'none'}
-          onClick={() => { i18n.changeLanguage('he'); setLanguageSelected('he'); }}>
-          <img className='languageImg' src={`${process.env.PUBLIC_URL}/icons/israel-flag.svg`} alt="israel-flag" />
-        </Button>
-
-      </div>
-
-
-
-
-      <IntroAnimationC />
-
-      {/* ICONS section */}
-      {/* <div style={{
-        padding: "50px",
-        background: "gray",
-        height: "110vh",
-        zIndex: 1000,
-
-      }}>  */}
-      <div style={{
-        height: "110vh"
+        height: "50vh"
       }} ></div>
 
+      {/* - NAVBAR - */}
+      {/* Show the Navbar just if the intro finisheded */}
+      {introFinished && <Navbar show={introFinished} />}
 
 
-
-
-
+      {/* - MY DEVELOPER ARSENAL - */}
       <div className="iconsContainer">
         <div className="icons">
 
-          {/* <h1>My Developer Arsenal</h1> */}
           <h1 className='headline'
             style={{ lineHeight: '5vh' }}
           >{t('home.developerArsenal')}</h1>
-
-
 
 
           <div className="firstRowIcons">
@@ -148,8 +113,6 @@ const HomePage = () => {
             {/* 
           <button onMouseEnter={() => console.log('blaaa')}
             onClick={() => window.reload()}>Test Button</button> */}
-
-
 
 
             <div className="icon">
@@ -210,13 +173,14 @@ const HomePage = () => {
 
 
 
+      {/* - MY WORKS - */}
 
-      <div className='projectSection'>
-        {/* <h1>My works</h1> */}
+      <div id='projectsSection'>
         <h1 className='headline'>{t('home.myWorks')}</h1>
 
 
-        {/* Featured Projects  */}
+        {/* Projects Buttons */}
+
         <div class="ProjectsButtons">
           <Button
             variant={activeBtn === 'featured' ? 'primary' : 'light'}
@@ -225,14 +189,12 @@ const HomePage = () => {
             {t('home.featured')}
           </Button>
 
-
           <Button
             variant={activeBtn === 'mini' ? 'primary' : 'light'}
             className="border border-black"
             onClick={() => handleClick("mini")}>
             {t('home.miniApps')}
           </Button>
-
 
           <Button
             variant={activeBtn === 'landing' ? 'primary' : 'light'}
@@ -252,32 +214,27 @@ const HomePage = () => {
 
 
 
+      {/* - ABOUT - */}
 
-
-      {/* <!-- On me section --> */}
-      <div class="aboutMe">
+      <div id="aboutSection">
         <img src={`${process.env.PUBLIC_URL}/me.jpeg`} alt="Big me" />
         <div className="textOnMe">
-          {/* <h2>About me</h2> */}
           <h1 className='headline'>{t('home.aboutMe')}</h1>
-
-
           {t("home.aboutParagraphs", { returnObjects: true }).map((paragraph, index) => (
             <p className='aboutMePar' key={index}>{paragraph}</p>
           ))}
-
 
         </div >
       </div >
 
 
 
-      {/* <-- contact --> */}
+      {/* - CONTACT - */}
 
-      <div id="contactContainer">
-        <div class="letterContainer">
+      <div id="contactSection">
+        {/* <div class="letterContainer">
           <img src={`${process.env.PUBLIC_URL}/images/letter.png`} alt="Letter" />
-        </div>
+        </div> */}
 
         {/* Form */}
         <Form className='contactForm'
@@ -365,14 +322,12 @@ const HomePage = () => {
           </Modal>
         </Form>
 
-
-
-
-
       </div>
 
 
-      {/* <!-- Footer --> */}
+
+      {/* - FOOTER - */}
+
       <footer>
         <nav>
 
@@ -441,13 +396,13 @@ const HomePage = () => {
             </a></button>
           </div> */}
 
-
-
         </nav>
-
       </footer>
 
-      {/* <!-- Under footer --> */}
+
+
+      {/* - UNDER FOOTER - */}
+
       <div class="underFooter">
         <p class="leftP">
           {t("home.footer.name")}
@@ -458,10 +413,6 @@ const HomePage = () => {
 
         </p>
       </div>
-
-
-
-
 
 
     </ >
