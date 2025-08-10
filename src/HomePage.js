@@ -10,6 +10,10 @@ import { Form, Button, Modal } from "react-bootstrap";
 import './css/homePage.css';
 
 import { useTranslation } from 'react-i18next';
+import { BsPerson } from 'react-icons/bs';
+import { BsEnvelope } from 'react-icons/bs';
+import { BsPhone } from 'react-icons/bs';
+
 
 
 
@@ -20,6 +24,13 @@ const HomePage = () => {
 
   const [introFinished, setIntroFinished] = useState(false);
 
+  const [focusedFields, setFocusedFields] = useState({});
+  function handleFocus(name) {
+    setFocusedFields(prev => ({ ...prev, [name]: true }));
+  }
+  function handleBlur(name) {
+    setFocusedFields(prev => ({ ...prev, [name]: false }));
+  }
 
   const { t, i18n } = useTranslation();
   const [languageSelected, setLanguageSelected] = useState(i18n.language);
@@ -88,7 +99,7 @@ const HomePage = () => {
 
       {/* - WHITE SPACE after intro - */}
       <div style={{
-        height: "50vh"
+        height: "10vh"
       }} ></div>
 
       {/* - NAVBAR - */}
@@ -251,36 +262,95 @@ const HomePage = () => {
             .map((line, index) => (<p className='contactP' key={index}>{line}</p>))}
 
           <div className="row">
+
+            {/* Name */}
             <div className="col-md-6 mb-3">
-              <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Control type="name" placeholder={t("home.contact.name")}
+              <Form.Floating className="mb-3">
+                <Form.Control type="name" placeholder=""
                   name='name' onChange={handleChange} value={formData.name}
                   required
+                  onFocus={() => handleFocus("name")}
+                  onBlur={() => handleBlur("name")}
                 />
-              </Form.Group>
+                <label htmlFor="formBasicName" className={focusedFields.name ? "focused" : ""}>
+
+                  <BsPerson className='ttlIcnContact'
+                    style={{
+
+                      transform: "translateY(-10%)",
+                      // color: "#0d6efd",
+                      pointerEvents: "none",
+                      fontSize: "1rem",
+                    }} />
+
+                  <span className='ttlTxtContact'>
+                    {t("home.contact.name")}
+                  </span>
+
+                </label>
+              </Form.Floating>
             </div>
 
+            {/* Email */}
             <div className="col-md-6 mb-3">
-
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Floating className="mb-3">
                 <Form.Control type="email"
                   name='email' onChange={handleChange} value={formData.email}
-                  placeholder={t("home.contact.email")} required
+                  placeholder="" required
+                  onFocus={() => handleFocus("email")}
+                  onBlur={() => handleBlur("email")}
                 />
+                <label htmlFor="formBasicEmail" className={focusedFields.email ? "focused" : ""}>
 
-              </Form.Group>
+                  <BsEnvelope className='ttlIcnContact'
+                    style={{
+
+                      transform: "translateY(-10%)",
+                      // color: "#0d6efd",
+                      pointerEvents: "none",
+                      fontSize: "1rem",
+                    }} />
+
+                  <span className='ttlTxtContact'>
+                    {t("home.contact.email")}
+                  </span>
+
+                </label>
+              </Form.Floating>
             </div>
 
-            <div className="col-md-6 mb-3">
 
-              <Form.Group className="mb-3" controlId="formBasicPhone">
-                <Form.Control type="phone"
+            {/* Phone */}
+            <div className="col-md-12 mb-3">
+              <Form.Floating className="mb-3">
+                <Form.Control type="tel"
                   name='phone' onChange={handleChange} value={formData.phone}
-                  placeholder={t("home.contact.phone")}
+                  placeholder=""
+                  onFocus={() => handleFocus("phone")}
+                  onBlur={() => handleBlur("phone")}
                 />
-              </Form.Group>
+                <label htmlFor="formBasicPhone" className={focusedFields.phone ? "focused" : ""}>
+
+                  <BsPhone className='ttlIcnContact'
+                    style={{
+
+                      transform: "translateY(-10%)",
+                      // color: "#0d6efd",
+                      pointerEvents: "none",
+                      fontSize: "1rem",
+                    }} />
+
+                  <span className='ttlTxtContact'>
+                    {t("home.contact.phone")}
+                  </span>
+
+                </label>
+              </Form.Floating>
+
             </div>
 
+
+            {/* Message */}
             <div className="col-md-12 mb-3">
 
               <Form.Group className="mb-3" controlId="formBasicMessage">
@@ -288,9 +358,11 @@ const HomePage = () => {
                   name='message' onChange={handleChange} value={formData.message}
                   placeholder={t("home.contact.message")} required
                 />
+
                 <Form.Text className="text-muted">
                 </Form.Text>
               </Form.Group>
+              \
             </div>
 
             <input type="hidden" name="_template" value="table" />

@@ -5,6 +5,7 @@ import '../css/introAnimation.css'
 import { useTranslation } from 'react-i18next';
 
 import { Form, Button, Modal } from "react-bootstrap";
+import { useInView } from "framer-motion";
 
 
 
@@ -33,26 +34,37 @@ const IntroAnimationC = ({ setIntroFinished }) => {
     }, []);
 
 
+    // useEffect(() => {
+    //     const unsubscribe = scrollYProgress.onChange((latest) => {
+    //         if (latest >= 0.15) {
+    //             setTimeout(() => {
+    //                 setOpacity(0);
+    //                 setIntroFinished(true);
+
+    //             }, 200);
+
+    //         } else {
+    //             setIntroFinished(false);
+
+    //             setOpacity(1);
+    //         }
+    //     });
+
+    //     return () => unsubscribe();
+    // }, [scrollYProgress, setIntroFinished]);
+
+
+    const isInView = useInView(sectionRef, { margin: "100% 0px -100% 0px" });
+
     useEffect(() => {
-
-
-        const unsubscribe = scrollYProgress.onChange((latest) => {
-            if (latest >= 0.15) {
-                setTimeout(() => {
-                    setOpacity(0);
-                    setIntroFinished(true);
-
-                }, 200);
-
-            } else {
-                setIntroFinished(false);
-
-                setOpacity(1);
-            }
-        });
-
-        return () => unsubscribe();
-    }, [scrollYProgress, setIntroFinished]);
+        if (!isInView) {
+            setOpacity(0);
+            setIntroFinished(true);
+        } else {
+            setOpacity(1);
+            setIntroFinished(false);
+        }
+    }, [isInView, setIntroFinished]);
 
 
     const start = sectionTop;

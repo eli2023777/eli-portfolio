@@ -422,6 +422,29 @@ button {
     margin-bottom: 10vh;
 }
 
+.contactForm .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.ttlIcnContact {
+    display: none;
+}
+
+.ttlTxtContact {
+    display: inline;
+}
+
+label.focused .ttlIcnContact {
+    display: inline;
+}
+
+label.focused .ttlTxtContact {
+    display: none;
+}
+
+
 .contactForm .contactP {
     margin: 8vh auto;
     width: 40vw;
