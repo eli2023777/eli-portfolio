@@ -47,12 +47,14 @@ const Navbar = ({ show }) => {
 
                 <ul className="navBar">
 
-                    <li><a href="#contactSection"
-                        className={activeLink === 'contactSection' ? 'active' : ''}
-                        onClick={() => handleClick('contactSection')}
+
+                    <li><a href="#aboutSection"
+                        className={activeLink === 'aboutSection' ? 'active' : ''}
+                        onClick={() => handleClick('aboutSection')}
                     >
-                        {t("navbar.contact")}
+                        {t("navbar.about")}
                     </a></li>
+
 
                     <li><a href="#projectsSection"
                         className={activeLink === 'projectsSection' ? 'active' : ''}
@@ -61,12 +63,14 @@ const Navbar = ({ show }) => {
                         {t("navbar.projects")}
                     </a></li>
 
-                    <li><a href="#aboutSection"
-                        className={activeLink === 'aboutSection' ? 'active' : ''}
-                        onClick={() => handleClick('aboutSection')}
+
+                    <li><a href="#contactSection"
+                        className={activeLink === 'contactSection' ? 'active' : ''}
+                        onClick={() => handleClick('contactSection')}
                     >
-                        {t("navbar.about")}
+                        {t("navbar.contact")}
                     </a></li>
+
                 </ul>
 
 

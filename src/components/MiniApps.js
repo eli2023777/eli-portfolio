@@ -11,14 +11,14 @@ import i18n from '../i18n';
 const slidesData = [
     {
         imgSrc: `${process.env.PUBLIC_URL}/images/TicTacToePrtSc.png`,
-        // title: 'Tic Tac Toe',
+        title: 'Tic Tac Toe',
         key: 'ticTacToe',
         categories: ['Games'],
         toolsIcons: ['HTML', 'CSS', 'JS'],
     },
     {
         imgSrc: `${process.env.PUBLIC_URL}/images/SimonGamePrtSc.png`,
-        // title: 'Simon Game',
+        title: 'Simon Game',
         key: 'simonGame',
 
         categories: ['Games'],
@@ -26,7 +26,7 @@ const slidesData = [
     },
     {
         imgSrc: `${process.env.PUBLIC_URL}/images/ShoppingListPrtSc.png`,
-        // title: 'Shopping List',
+        title: 'Shopping List',
         key: 'shoppingList',
 
         categories: ['Apps'],
@@ -34,7 +34,7 @@ const slidesData = [
     },
     {
         imgSrc: `${process.env.PUBLIC_URL}/images/UsersManagerPrtSc.png`,
-        // title: 'Users Manager',
+        title: 'Users Manager',
         key: 'usersManager',
 
         categories: ['Apps'],
@@ -42,7 +42,7 @@ const slidesData = [
     },
     {
         imgSrc: `${process.env.PUBLIC_URL}/images/screenBPrtSc.png`,
-        // title: 'Screens Builder',
+        title: 'Screens Builder',
         key: 'screensBuilder',
 
         categories: ['Apps'],
@@ -50,7 +50,7 @@ const slidesData = [
     },
     {
         imgSrc: `${process.env.PUBLIC_URL}/images/worldClockPrtSc.png`,
-        // title: 'World Clocks',
+        title: 'World Clocks',
         key: 'worldClocks',
 
         categories: ['Apps'],
@@ -152,7 +152,11 @@ const MiniApps = () => {
                     {slidesData.map((slide, index) => (
                         <SwiperSlide key={index}
                             onDoubleClick={() => window.open(
-                                `https://eli2023777.github.io/${formatTitleForRepoUrl(t(`miniApps.${slide.key}.title`))}/`,
+                                `https://eli2023777.github.io/${formatTitleForRepoUrl
+                                    (
+                                        slide.title
+                                        // t(`miniApps.${slide.key}.title`)
+                                    )}/`,
                                 '_blank', 'noopener,noreferrer')}
                         >
                             <img src={slide.imgSrc} alt={t(`miniApps.${slide.key}.title`)} />
@@ -189,10 +193,16 @@ const MiniApps = () => {
                                     </div>
 
                                     <div className="buttons">
+
+                                        {/* View Code Button */}
                                         <button className='linkBtn'>
                                             <span className='label'
                                                 onClick={() => window.open(
-                                                    `https://github.com/eli2023777/${formatTitleForRepoUrl(t(`miniApps.${slide.key}.title`))}.git`,
+                                                    `https://github.com/eli2023777/${formatTitleForRepoUrl
+                                                        (
+                                                            slide.title
+                                                            // t(`miniApps.${slide.key}.title`)
+                                                        )}.git`,
                                                     '_blank', 'noopener,noreferrer')}
                                             >
                                                 {/* View code */}
@@ -200,10 +210,15 @@ const MiniApps = () => {
                                             </span>
                                         </button>
 
+                                        {/* Live Site Button */}
                                         <button className='linkBtn'>
                                             <span className='label'
                                                 onClick={() => window.open(
-                                                    `https://eli2023777.github.io/${formatTitleForRepoUrl(t(`miniApps.${slide.key}.title`))}/`,
+                                                    `https://eli2023777.github.io/${formatTitleForRepoUrl(
+                                                        slide.title
+                                                        // t(`miniApps.${slide.key}.title`)
+                                                    )
+                                                    }/`,
                                                     '_blank', 'noopener,noreferrer')}
                                             >
                                                 {/* Live site */}

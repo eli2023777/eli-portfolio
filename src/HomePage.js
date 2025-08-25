@@ -13,6 +13,9 @@ import { useTranslation } from 'react-i18next';
 import { BsPerson } from 'react-icons/bs';
 import { BsEnvelope } from 'react-icons/bs';
 import { BsPhone } from 'react-icons/bs';
+import { motion, useScroll, useTransform } from "motion/react";
+
+
 
 
 
@@ -88,6 +91,29 @@ const HomePage = () => {
   };
 
 
+  const iconsVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        delayChildren: 0.2,
+        staggerChildren: 0.1 // 0.2 Sec delay
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } }
+  };
+
+
+
+
 
   return (
     <>
@@ -97,310 +123,359 @@ const HomePage = () => {
       {/* Intro Animation Component */}
       <IntroAnimationC setIntroFinished={setIntroFinished} />
 
-      {/* - WHITE SPACE after intro - */}
-      <div style={{
-        height: "10vh"
-      }} ></div>
 
       {/* - NAVBAR - */}
       {/* Show the Navbar just if the intro finisheded */}
       {introFinished && <Navbar show={introFinished} />}
 
+      <motion.div
+        variants={iconsVariants}
+        initial="hidden"
+        whileInView="visible"
+      // viewport={{ once: true, amount: 0.3 }}
+      >
 
-      {/* - MY DEVELOPER ARSENAL - */}
-      <div className="iconsContainer">
+
+
+
+        {/* - MY DEVELOPER ARSENAL - */}
+
         <div className="icons">
 
-          <h1 className='headline'
-            style={{ lineHeight: '5vh' }}
-          >{t('home.developerArsenal')}</h1>
+          <motion.div variants={item}>
+            <h1 className='headline'>
+              {t('home.developerArsenal')}
+            </h1>
+
+          </motion.div>
 
 
-          <div className="firstRowIcons">
-            <div className="icon">
+          <div className="firstRowIcons" >
+            <motion.div variants={item} className="icon">
+
               <img src={`${process.env.PUBLIC_URL}/icons/img-HTML.png`} alt="html" />
               <h6>HTML</h6>
-            </div>
-            {/* 
-          <button onMouseEnter={() => console.log('blaaa')}
-            onClick={() => window.reload()}>Test Button</button> */}
+            </motion.div>
 
 
-            <div className="icon">
+            <motion.div variants={item} className="icon">
+
               <img src={`${process.env.PUBLIC_URL}/icons/img-CSS.png`} alt="css" />
               <h6>CSS</h6>
-            </div>
+              {/* </div> */}
+            </motion.div>
 
-            <div className="icon">
+            <motion.div variants={item} className="icon">
               <img src={`${process.env.PUBLIC_URL}/icons/img-Bootstrap.png`} alt="bootstrap" />
               <h6>Bootstrap</h6>
-            </div>
+            </motion.div>
 
-            <div className="icon">
+
+            <motion.div variants={item} className="icon">
               <img src={`${process.env.PUBLIC_URL}/icons/img-JS.png`} alt="js" />
               <h6>JavaScript</h6>
-            </div>
+            </motion.div>
 
-            <div className="icon">
+
+            <motion.div variants={item} className="icon">
               <img src={`${process.env.PUBLIC_URL}/icons/img-TS.png`} alt="ts" />
               <h6>TypeScript</h6>
-            </div>
-
-            {/* <img src="/icons/img-OOP.png" alt="oop" /> */}
+            </motion.div>
           </div>
 
+
+
           <div class="secondRowIcons">
-            {/* <img src="/icons/img-ES6.png" alt="ES6" /> */}
-            {/* <img src="/icons/img-API.png" alt="api" /> */}
-            <div className="icon">
+
+            <motion.div variants={item} className="icon">
               <img src={`${process.env.PUBLIC_URL}/icons/img-React.png`} alt="react" />
               <h6>React</h6>
-            </div>
+            </motion.div>
 
-            <div className="icon">
+            <motion.div variants={item} className="icon">
               <img src={`${process.env.PUBLIC_URL}/icons/img-NodeJS.png`} alt="node.js" />
               <h6>NodeJS</h6>
-            </div>
+            </motion.div>
 
-            <div className="icon">
+            <motion.div variants={item} className="icon">
               <img src={`${process.env.PUBLIC_URL}/icons/img-NextJS.svg`} alt="next.js" />
               <h6>NextJS</h6>
-            </div>
+            </motion.div>
 
-            <div className="icon">
+            <motion.div variants={item} className="icon">
               <img src={`${process.env.PUBLIC_URL}/icons/img-Git.png`} alt="Git" />
               <h6>Git</h6>
-            </div>
+            </motion.div>
 
-            <div className="icon">
+            <motion.div variants={item} className="icon">
               <img src={`${process.env.PUBLIC_URL}/icons/img-mongoDB.png`} alt="mongoDB" />
               <h6>MongoDB</h6>
-            </div>
+            </motion.div>
 
           </div>
 
         </div>
-      </div>
+
+      </motion.div>
+
 
 
 
       {/* - MY WORKS - */}
 
-      <div id='projectsSection'>
-        <h1 className='headline'>{t('home.myWorks')}</h1>
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        whileInView="visible"
+      >
+        <motion.div variants={item} id='projectsSection'>
+          <h1 className='headline'>{t('home.myWorks')}</h1>
 
 
-        {/* Projects Buttons */}
+          {/* Projects Buttons */}
 
-        <div class="ProjectsButtons">
-          <Button
-            variant={activeBtn === 'featured' ? 'primary' : 'light'}
-            className="border border-black"
-            onClick={() => handleClick("featured")}>
-            {t('home.featured')}
-          </Button>
+          <div class="ProjectsButtons">
 
-          <Button
-            variant={activeBtn === 'mini' ? 'primary' : 'light'}
-            className="border border-black"
-            onClick={() => handleClick("mini")}>
-            {t('home.miniApps')}
-          </Button>
+            <Button
+              variant={activeBtn === 'featured' ? 'primary' : 'light'}
+              className="border border-black"
+              onClick={() => handleClick("featured")}>
+              {t('home.featured')}
+            </Button>
 
-          <Button
-            variant={activeBtn === 'landing' ? 'primary' : 'light'}
+            <Button
+              variant={activeBtn === 'mini' ? 'primary' : 'light'}
+              className="border border-black"
+              onClick={() => handleClick("mini")}>
+              {t('home.miniApps')}
+            </Button>
 
-            className="border border-black"
-            onClick={() => handleClick("landing")}>
-            {t('home.landingPages')}
-          </Button>
-        </div>
+            <Button
+              variant={activeBtn === 'landing' ? 'primary' : 'light'}
 
-        <div ref={contentRef} style={{ marginTop: "40px" }}>
-          {activeBtn === "featured" && <FeaturedProjects />}
-          {activeBtn === "mini" && <MiniApps />}
-          {activeBtn === "landing" && <LandingPages />}
-        </div>
-      </div>
+              className="border border-black"
+              onClick={() => handleClick("landing")}>
+              {t('home.landingPages')}
+            </Button>
 
+          </div >
+
+
+          <div
+            ref={contentRef}
+            style={{ marginTop: "40px" }}>
+
+            {activeBtn === "featured" && (
+              <FeaturedProjects />
+
+            )}
+
+            {activeBtn === "mini" && (
+              <MiniApps />
+
+            )}
+
+            {activeBtn === "landing" && (
+              <LandingPages />
+
+            )}
+
+          </div >
+
+        </motion.div >
+      </motion.div >
 
 
       {/* - ABOUT - */}
 
-      <div id="aboutSection">
-        <img src={`${process.env.PUBLIC_URL}/me.jpeg`} alt="Big me" />
-        <div className="textOnMe">
-          <h1 className='headline'>{t('home.aboutMe')}</h1>
-          {t("home.aboutParagraphs", { returnObjects: true }).map((paragraph, index) => (
-            <p className='aboutMePar' key={index}>{paragraph}</p>
-          ))}
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        whileInView="visible"
+      >
 
-        </div >
-      </div >
+        <motion.div variants={item} id='aboutSection'>
 
+          <img src={`${process.env.PUBLIC_URL}/me.jpeg`} alt="Big me" />
+          <div className="textOnMe">
+            <h1 className='headline'>{t('home.aboutMe')}</h1>
+            {t("home.aboutParagraphs", { returnObjects: true }).map((paragraph, index) => (
+              <p className='aboutMePar' key={index}>{paragraph}</p>
+            ))}
+
+          </div >
+
+        </motion.div >
+      </motion.div >
 
 
       {/* - CONTACT - */}
 
-      <div id="contactSection">
-        {/* <div class="letterContainer">
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        whileInView="visible"
+      >
+        <motion.div variants={item} id='contactSection'>
+
+          {/* <div class="letterContainer">
           <img src={`${process.env.PUBLIC_URL}/images/letter.png`} alt="Letter" />
         </div> */}
 
-        {/* Form */}
-        <Form className='contactForm'
-          action="https://formsubmit.co/eli770440@gmail.com"
-          method="post"
-          target="hidden_iframe"
-          onSubmit={handleSubmit}
-        >
-          <h1 className='headline'>
-            {t("home.contact.h3")}
-          </h1>
+          {/* Form */}
+          <Form className='contactForm'
+            action="https://formsubmit.co/eli770440@gmail.com"
+            method="post"
+            target="hidden_iframe"
+            onSubmit={handleSubmit}
+          >
+            <h1 className='headline'>
+              {t("home.contact.h3")}
+            </h1>
 
-          {t("home.contact.p", { returnObjects: true })
-            .map((line, index) => (<p className='contactP' key={index}>{line}</p>))}
+            {t("home.contact.p", { returnObjects: true })
+              .map((line, index) => (<p className='contactP' key={index}>{line}</p>))}
 
-          <div className="row">
+            <div className="row">
 
-            {/* Name */}
-            <div className="col-md-6 mb-3">
-              <Form.Floating className="mb-3">
-                <Form.Control type="name" placeholder=""
-                  name='name' onChange={handleChange} value={formData.name}
-                  required
-                  onFocus={() => handleFocus("name")}
-                  onBlur={() => handleBlur("name")}
-                />
-                <label htmlFor="formBasicName" className={focusedFields.name ? "focused" : ""}>
+              {/* Name */}
+              <div className="col-md-6 mb-3">
+                <Form.Floating className="mb-3">
+                  <Form.Control type="name" placeholder=""
+                    name='name' onChange={handleChange} value={formData.name}
+                    required
+                    onFocus={() => handleFocus("name")}
+                    onBlur={() => handleBlur("name")}
+                  />
+                  <label htmlFor="formBasicName" className={focusedFields.name ? "focused" : ""}>
 
-                  <BsPerson className='ttlIcnContact'
-                    style={{
+                    <BsPerson className='ttlIcnContact'
+                      style={{
 
-                      transform: "translateY(-10%)",
-                      // color: "#0d6efd",
-                      pointerEvents: "none",
-                      fontSize: "1rem",
-                    }} />
+                        transform: "translateY(-10%)",
+                        // color: "#0d6efd",
+                        pointerEvents: "none",
+                        fontSize: "1rem",
+                      }} />
 
-                  <span className='ttlTxtContact'>
-                    {t("home.contact.name")}
-                  </span>
+                    <span className='ttlTxtContact'>
+                      {t("home.contact.name")}
+                    </span>
 
-                </label>
-              </Form.Floating>
+                  </label>
+                </Form.Floating>
+              </div>
+
+              {/* Email */}
+              <div className="col-md-6 mb-3">
+                <Form.Floating className="mb-3">
+                  <Form.Control type="email"
+                    name='email' onChange={handleChange} value={formData.email}
+                    placeholder="" required
+                    onFocus={() => handleFocus("email")}
+                    onBlur={() => handleBlur("email")}
+                  />
+                  <label htmlFor="formBasicEmail" className={focusedFields.email ? "focused" : ""}>
+
+                    <BsEnvelope className='ttlIcnContact'
+                      style={{
+
+                        transform: "translateY(-10%)",
+                        // color: "#0d6efd",
+                        pointerEvents: "none",
+                        fontSize: "1rem",
+                      }} />
+
+                    <span className='ttlTxtContact'>
+                      {t("home.contact.email")}
+                    </span>
+
+                  </label>
+                </Form.Floating>
+              </div>
+
+
+              {/* Phone */}
+              <div className="col-md-12 mb-3">
+                <Form.Floating className="mb-3">
+                  <Form.Control type="tel"
+                    name='phone' onChange={handleChange} value={formData.phone}
+                    placeholder=""
+                    onFocus={() => handleFocus("phone")}
+                    onBlur={() => handleBlur("phone")}
+                  />
+                  <label htmlFor="formBasicPhone" className={focusedFields.phone ? "focused" : ""}>
+
+                    <BsPhone className='ttlIcnContact'
+                      style={{
+
+                        transform: "translateY(-10%)",
+                        // color: "#0d6efd",
+                        pointerEvents: "none",
+                        fontSize: "1rem",
+                      }} />
+
+                    <span className='ttlTxtContact'>
+                      {t("home.contact.phone")}
+                    </span>
+
+                  </label>
+                </Form.Floating>
+
+              </div>
+
+
+              {/* Message */}
+              <div className="col-md-12 mb-3">
+
+                <Form.Group className="mb-3" controlId="formBasicMessage">
+                  <Form.Control as="textarea" rows={4}
+                    name='message' onChange={handleChange} value={formData.message}
+                    placeholder={t("home.contact.message")} required
+                  />
+
+                  <Form.Text className="text-muted">
+                  </Form.Text>
+                </Form.Group>
+
+              </div>
+
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
             </div>
 
-            {/* Email */}
-            <div className="col-md-6 mb-3">
-              <Form.Floating className="mb-3">
-                <Form.Control type="email"
-                  name='email' onChange={handleChange} value={formData.email}
-                  placeholder="" required
-                  onFocus={() => handleFocus("email")}
-                  onBlur={() => handleBlur("email")}
-                />
-                <label htmlFor="formBasicEmail" className={focusedFields.email ? "focused" : ""}>
+            <Button variant="primary" type="submit">
+              {t("home.contact.submit")}
+            </Button>
 
-                  <BsEnvelope className='ttlIcnContact'
-                    style={{
+            {/* Prevent page transition  */}
+            <iframe name="hidden_iframe" style={{ display: "none" }}></iframe>
 
-                      transform: "translateY(-10%)",
-                      // color: "#0d6efd",
-                      pointerEvents: "none",
-                      fontSize: "1rem",
-                    }} />
-
-                  <span className='ttlTxtContact'>
-                    {t("home.contact.email")}
-                  </span>
-
-                </label>
-              </Form.Floating>
-            </div>
+            {/* Pop-Up Modal */}
+            <Modal show={showModal} onHide={handleClose} centered backdrop="static">
+              <Modal.Header>
+                <Modal.Title>
+                  {t("home.contact.success.t")}
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                {t("home.contact.success.b")}
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="primary" onClick={handleClose}>
+                  אישור
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </Form>
 
 
-            {/* Phone */}
-            <div className="col-md-12 mb-3">
-              <Form.Floating className="mb-3">
-                <Form.Control type="tel"
-                  name='phone' onChange={handleChange} value={formData.phone}
-                  placeholder=""
-                  onFocus={() => handleFocus("phone")}
-                  onBlur={() => handleBlur("phone")}
-                />
-                <label htmlFor="formBasicPhone" className={focusedFields.phone ? "focused" : ""}>
-
-                  <BsPhone className='ttlIcnContact'
-                    style={{
-
-                      transform: "translateY(-10%)",
-                      // color: "#0d6efd",
-                      pointerEvents: "none",
-                      fontSize: "1rem",
-                    }} />
-
-                  <span className='ttlTxtContact'>
-                    {t("home.contact.phone")}
-                  </span>
-
-                </label>
-              </Form.Floating>
-
-            </div>
-
-
-            {/* Message */}
-            <div className="col-md-12 mb-3">
-
-              <Form.Group className="mb-3" controlId="formBasicMessage">
-                <Form.Control as="textarea" rows={4}
-                  name='message' onChange={handleChange} value={formData.message}
-                  placeholder={t("home.contact.message")} required
-                />
-
-                <Form.Text className="text-muted">
-                </Form.Text>
-              </Form.Group>
-              \
-            </div>
-
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-          </div>
-
-          <Button variant="primary" type="submit">
-            {t("home.contact.submit")}
-          </Button>
-
-          {/* Prevent page transition  */}
-          <iframe name="hidden_iframe" style={{ display: "none" }}></iframe>
-
-          {/* Pop-Up Modal */}
-          <Modal show={showModal} onHide={handleClose} centered backdrop="static">
-            <Modal.Header>
-              <Modal.Title>
-                {t("home.contact.success.t")}
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              {t("home.contact.success.b")}
-            </Modal.Body>
-            <Modal.Footer>
-              <Button variant="primary" onClick={handleClose}>
-                אישור
-              </Button>
-            </Modal.Footer>
-          </Modal>
-        </Form>
-
-      </div>
-
-
+        </motion.div >
+      </motion.div >
 
       {/* - FOOTER - */}
 
-      <footer>
+      < footer >
         <nav>
 
           {/* <!-- linkedin --> */}
@@ -469,13 +544,15 @@ const HomePage = () => {
           </div> */}
 
         </nav>
-      </footer>
+      </ footer >
+
+
 
 
 
       {/* - UNDER FOOTER - */}
 
-      <div class="underFooter">
+      <div div class="underFooter" >
         <p class="leftP">
           {t("home.footer.name")}
         </p>
@@ -484,11 +561,10 @@ const HomePage = () => {
           &copy; {new Date().getFullYear()}
 
         </p>
-      </div>
+      </div >
 
 
-    </ >
-
+    </>
 
   );
 }

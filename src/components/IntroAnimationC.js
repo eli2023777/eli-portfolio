@@ -15,7 +15,6 @@ const IntroAnimationC = ({ setIntroFinished }) => {
     const [sectionTop, setSectionTop] = useState(0);
     const [opacity, setOpacity] = useState(1);
 
-    // const { t } = useTranslation();
     const { t, i18n } = useTranslation();
     const [languageSelected, setLanguageSelected] = useState(i18n.language);
 
@@ -32,26 +31,6 @@ const IntroAnimationC = ({ setIntroFinished }) => {
 
         return () => window.removeEventListener("scroll", updateSectionTop);
     }, []);
-
-
-    // useEffect(() => {
-    //     const unsubscribe = scrollYProgress.onChange((latest) => {
-    //         if (latest >= 0.15) {
-    //             setTimeout(() => {
-    //                 setOpacity(0);
-    //                 setIntroFinished(true);
-
-    //             }, 200);
-
-    //         } else {
-    //             setIntroFinished(false);
-
-    //             setOpacity(1);
-    //         }
-    //     });
-
-    //     return () => unsubscribe();
-    // }, [scrollYProgress, setIntroFinished]);
 
 
     const isInView = useInView(sectionRef, { margin: "100% 0px -100% 0px" });
@@ -83,7 +62,7 @@ const IntroAnimationC = ({ setIntroFinished }) => {
 
     return (
         <div>
-            <div className="introContainer" style={{ height: "400vh" }}>
+            <div className="introContainer" style={{ height: "310vh" }}>
                 <div className='languageButtons'
                     style={{ opacity: opacity }}           >
 
@@ -177,10 +156,7 @@ const IntroAnimationC = ({ setIntroFinished }) => {
                             }}
 
                         >
-                            {/* Welcome
-                            <br />
-                            <br />
-                            to my portfolio */}
+
 
                             {t('intro.welcome')} <br /><br /> {t('intro.portfolio')}
 
