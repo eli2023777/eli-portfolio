@@ -311,7 +311,6 @@ textarea {
 }
 
 footer {
-
     background-color: var(--footer-clr);
     padding: 5vh;
 }
@@ -322,15 +321,29 @@ footer nav {
     justify-content: center;
     gap: 10vw;
     text-align: center;
+    align-items: center;
 }
 
-footer nav p {
-    margin-top: 20px;
+.iconContainer {
+    width: 10vw;
+    height: 20vh;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.iconContainer p {
     font: normal normal normal 14px/21px;
     font-family: 'Inter', sans-serif;
     letter-spacing: 0px;
     color: #2C2C2C;
+    align-items: center;
 }
+
+
 
 .FooterIconBtn {
     background: none;

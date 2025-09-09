@@ -13,7 +13,7 @@ import { useTranslation } from 'react-i18next';
 import { BsPerson } from 'react-icons/bs';
 import { BsEnvelope } from 'react-icons/bs';
 import { BsPhone } from 'react-icons/bs';
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion } from "motion/react";
 
 
 
@@ -91,7 +91,7 @@ const HomePage = () => {
   };
 
 
-  const iconsVariants = {
+  const manyVariants = {
     hidden: {},
     visible: {
       transition: {
@@ -129,14 +129,11 @@ const HomePage = () => {
       {introFinished && <Navbar show={introFinished} />}
 
       <motion.div
-        variants={iconsVariants}
+        variants={manyVariants}
         initial="hidden"
         whileInView="visible"
       // viewport={{ once: true, amount: 0.3 }}
       >
-
-
-
 
         {/* - MY DEVELOPER ARSENAL - */}
 
@@ -224,39 +221,48 @@ const HomePage = () => {
       {/* - MY WORKS - */}
 
       <motion.div
-        variants={variants}
+        variants={manyVariants}
         initial="hidden"
         whileInView="visible"
       >
-        <motion.div variants={item} id='projectsSection'>
-          <h1 className='headline'>{t('home.myWorks')}</h1>
 
+        <div id='projectsSection'>
+          <motion.div variants={item}>
+            <h1 className='headline'>{t('home.myWorks')}</h1>
+          </motion.div>
 
           {/* Projects Buttons */}
 
           <div class="ProjectsButtons">
+            <motion.div variants={item}>
 
-            <Button
-              variant={activeBtn === 'featured' ? 'primary' : 'light'}
-              className="border border-black"
-              onClick={() => handleClick("featured")}>
-              {t('home.featured')}
-            </Button>
+              <Button
+                variant={activeBtn === 'featured' ? 'primary' : 'light'}
+                className="border border-black"
+                onClick={() => handleClick("featured")}>
+                {t('home.featured')}
+              </Button>
 
-            <Button
-              variant={activeBtn === 'mini' ? 'primary' : 'light'}
-              className="border border-black"
-              onClick={() => handleClick("mini")}>
-              {t('home.miniApps')}
-            </Button>
+            </motion.div>
 
-            <Button
-              variant={activeBtn === 'landing' ? 'primary' : 'light'}
+            <motion.div variants={item}>
+              <Button
+                variant={activeBtn === 'mini' ? 'primary' : 'light'}
+                className="border border-black"
+                onClick={() => handleClick("mini")}>
+                {t('home.miniApps')}
+              </Button>
+            </motion.div>
 
-              className="border border-black"
-              onClick={() => handleClick("landing")}>
-              {t('home.landingPages')}
-            </Button>
+            <motion.div variants={item}>
+              <Button
+                variant={activeBtn === 'landing' ? 'primary' : 'light'}
+
+                className="border border-black"
+                onClick={() => handleClick("landing")}>
+                {t('home.landingPages')}
+              </Button>
+            </motion.div>
 
           </div >
 
@@ -281,14 +287,14 @@ const HomePage = () => {
             )}
 
           </div >
+        </div >
 
-        </motion.div >
       </motion.div >
 
 
       {/* - ABOUT - */}
 
-      <motion.div
+      < motion.div
         variants={variants}
         initial="hidden"
         whileInView="visible"
@@ -311,7 +317,7 @@ const HomePage = () => {
 
       {/* - CONTACT - */}
 
-      <motion.div
+      < motion.div
         variants={variants}
         initial="hidden"
         whileInView="visible"
@@ -486,16 +492,16 @@ const HomePage = () => {
               <img
                 src={`${process.env.PUBLIC_URL}/icons/footer/awesome-linkedin-in.png`} alt="linkedin" />
             </a></button>
-            <p>eli-holzman</p>
+            <p className='footerIconTtl'>eli-holzman</p>
           </div>
 
-          {/* <!-- githubb --> */}
+          {/* <!-- github --> */}
           <div class="iconContainer">
             <button className='FooterIconBtn'><a href="">
               <img
                 src={`${process.env.PUBLIC_URL}/icons/footer/github.png`} alt="location" />
             </a></button>
-            <p>eli2023777</p>
+            <p className='footerIconTtl'>eli2023777</p>
           </div>
 
           {/* <!-- Location --> */}
@@ -507,7 +513,7 @@ const HomePage = () => {
                 <img src={`${process.env.PUBLIC_URL}/icons/footer/location.png`} alt="location" />
               </a>
             </button>
-            <p>
+            <p className='footerIconTtl'>
               {t("home.footer.location")}
             </p>
           </div>
@@ -519,7 +525,7 @@ const HomePage = () => {
             >
               <img src={`${process.env.PUBLIC_URL}/icons/footer/simple-email.png`} alt="simple-email" />
             </a></button>
-            <p>eli770440@gmail.com</p>
+            <p className='footerIconTtl'>eli770440@gmail.com</p>
           </div>
 
           {/* <!-- whatsapp --> */}
@@ -529,7 +535,7 @@ const HomePage = () => {
             >
               <img src={`${process.env.PUBLIC_URL}/icons/footer/simple-whatsapp.png`} alt="simple-whatsapp" />
             </a></button>
-            <p>
+            <p className='footerIconTtl'>
               {t("home.footer.phone")}
             </p>
           </div>
@@ -552,7 +558,7 @@ const HomePage = () => {
 
       {/* - UNDER FOOTER - */}
 
-      <div div class="underFooter" >
+      < div div div class="underFooter" >
         <p class="leftP">
           {t("home.footer.name")}
         </p>
@@ -561,7 +567,7 @@ const HomePage = () => {
           &copy; {new Date().getFullYear()}
 
         </p>
-      </div >
+      </ div >
 
 
     </>
