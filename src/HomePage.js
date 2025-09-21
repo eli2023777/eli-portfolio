@@ -497,7 +497,8 @@ const HomePage = () => {
 
           {/* <!-- github --> */}
           <div class="iconContainer">
-            <button className='FooterIconBtn'><a href="https://github.com/eli2023777">
+            <button className='FooterIconBtn'><a href="https://github.com/eli2023777"
+              target="_blank" rel="noopener noreferrer">
               <img
                 src={`${process.env.PUBLIC_URL}/icons/footer/github.png`} alt="location" />
             </a></button>
