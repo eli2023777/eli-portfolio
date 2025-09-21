@@ -14,7 +14,7 @@ const FeaturedProjects = () => {
         visible: {
             transition: {
                 delayChildren: 0.2,
-                staggerChildren: 0.1 // 0.2 Sec delay
+                staggerChildren: 0.8 // 0.2 Sec delay
             }
         }
     };

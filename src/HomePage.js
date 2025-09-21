@@ -492,16 +492,16 @@ const HomePage = () => {
               <img
                 src={`${process.env.PUBLIC_URL}/icons/footer/awesome-linkedin-in.png`} alt="linkedin" />
             </a></button>
-            <p className='footerIconTtl'>eli-holzman</p>
+            <p className='footerIconTtl mb-0'>eli-holzman</p>
           </div>
 
           {/* <!-- github --> */}
           <div class="iconContainer">
-            <button className='FooterIconBtn'><a href="">
+            <button className='FooterIconBtn'><a href="https://github.com/eli2023777">
               <img
                 src={`${process.env.PUBLIC_URL}/icons/footer/github.png`} alt="location" />
             </a></button>
-            <p className='footerIconTtl'>eli2023777</p>
+            <p className='footerIconTtl mb-0'>eli2023777</p>
           </div>
 
           {/* <!-- Location --> */}
@@ -513,7 +513,7 @@ const HomePage = () => {
                 <img src={`${process.env.PUBLIC_URL}/icons/footer/location.png`} alt="location" />
               </a>
             </button>
-            <p className='footerIconTtl'>
+            <p className='footerIconTtl mb-0'>
               {t("home.footer.location")}
             </p>
           </div>
@@ -525,7 +525,7 @@ const HomePage = () => {
             >
               <img src={`${process.env.PUBLIC_URL}/icons/footer/simple-email.png`} alt="simple-email" />
             </a></button>
-            <p className='footerIconTtl'>eli770440@gmail.com</p>
+            <p className='footerIconTtl mb-0'>eli770440@gmail.com</p>
           </div>
 
           {/* <!-- whatsapp --> */}
@@ -535,7 +535,7 @@ const HomePage = () => {
             >
               <img src={`${process.env.PUBLIC_URL}/icons/footer/simple-whatsapp.png`} alt="simple-whatsapp" />
             </a></button>
-            <p className='footerIconTtl'>
+            <p className='footerIconTtl mb-0'>
               {t("home.footer.phone")}
             </p>
           </div>
@@ -558,7 +558,7 @@ const HomePage = () => {
 
       {/* - UNDER FOOTER - */}
 
-      < div div div class="underFooter" >
+      < div class="underFooter" >
         <p class="leftP">
           {t("home.footer.name")}
         </p>
