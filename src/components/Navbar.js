@@ -31,22 +31,23 @@ const Navbar = ({ show }) => {
                     </a>
                 </ul>
 
+
                 <div className='navbarLngBtns'>
 
-                    <Button variant={languageSelected === 'en' ? 'primary' : 'none'}
+                    <Button variant={languageSelected === 'en' ? 'dark' : 'none'}
                         onClick={() => { i18n.changeLanguage('en'); setLanguageSelected('en'); }}>
                         <img className='navbarLngImg' src={`${process.env.PUBLIC_URL}/icons/us-flag.svg`} alt="us-flag" />
                     </Button>
 
-                    <Button variant={languageSelected === 'he' ? 'primary' : 'none'}
+                    <Button variant={languageSelected === 'he' ? 'dark' : 'none'}
                         onClick={() => { i18n.changeLanguage('he'); setLanguageSelected('he'); }}>
                         <img className='navbarLngImg' src={`${process.env.PUBLIC_URL}/icons/israel-flag.svg`} alt="israel-flag" />
                     </Button>
 
                 </div>
 
-                <ul className="navBar">
 
+                <ul className="navBar">
 
                     <li><a href="#aboutSection"
                         className={activeLink === 'aboutSection' ? 'active' : ''}

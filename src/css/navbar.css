@@ -1,8 +1,15 @@
+:root {
+    --bgc-clr: #FFFACD;
+    --clr: #2C2C2C;
+}
+
+
+
 .topNav {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--bgc-clr);
     z-index: 1000;
     display: flex;
     flex-direction: row;
@@ -50,17 +57,18 @@
     font-size: 1rem;
     transition: color 0.3s ease, border-bottom 0.3s ease;
     padding-bottom: 4px;
+    color: var(--clr);
 }
 
 .navBar a:hover,
 .navBar a:focus {
-    color: #1AE0EC;
-    border-bottom: 2px solid #1AE0EC;
+    border-bottom: 2px solid var(--clr);
 }
 
 .navBar a.active {
-    color: #1AE0EC;
-    border-bottom: 2px solid #1AE0EC;
+    /* color: #1AE0EC; */
+    color: var(--clr);
+    border-bottom: 2px solid var(--clr);
     font-weight: bold;
 }
 

@@ -464,6 +464,13 @@ label.focused .ttlTxtContact {
     width: 30vw;
 }
 
+.contactBtns {
+    display: flex;
+    justify-content: center;
+    gap: 4vw;
+}
+
+
 .letterContainer {
     width: 20vw;
 }
