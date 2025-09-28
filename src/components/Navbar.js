@@ -4,6 +4,8 @@ import '../css/navbar.css';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Form, Button, Modal } from "react-bootstrap";
+// import { useTransform, useScroll } from "motion/react";
+
 
 
 const Navbar = ({ show }) => {
@@ -11,6 +13,10 @@ const Navbar = ({ show }) => {
     const { t, i18n } = useTranslation();
     const [languageSelected, setLanguageSelected] = useState(i18n.language);
     const [activeLink, setActiveLink] = useState('');
+    const [hamburgerWhite, setHamburgerWhite] = useState(false);
+
+    // const blackScreenXNum = useTransform(scrollYProgressInSection, [0, 1], [-110, 0]);
+
 
     const handleClick = (sectionId) => {
         setActiveLink(sectionId);

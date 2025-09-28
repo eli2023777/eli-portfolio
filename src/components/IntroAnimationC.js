@@ -17,7 +17,13 @@ const IntroAnimationC = ({ setIntroFinished }) => {
 
     const { t, i18n } = useTranslation();
     const [languageSelected, setLanguageSelected] = useState(i18n.language);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     useEffect(() => {
         const updateSectionTop = () => {
@@ -53,8 +59,10 @@ const IntroAnimationC = ({ setIntroFinished }) => {
 
     const textX = useTransform(scrollYProgressInSection, [0, 1], ["50%", "-300%"]);
     const blackScreenX = useTransform(scrollYProgressInSection, [0, 1], ["-110%", "0%"]);
-    const meImg = useTransform(scrollYProgressInSection, [0, 1], ["-50%", "15%"]);
-    const newTextY = useTransform(scrollYProgressInSection, [0, 1], ["-400%", "50%"]);
+    const meImg = useTransform(scrollYProgressInSection, [0, 1],
+        isMobile ? ["-200%", "18%"] : ["-50%", "15%"]);
+    const newTextY = useTransform(scrollYProgressInSection, [0, 1],
+        isMobile ? ["-200%", "73%"] : ["-400%", "50%"]);
 
 
 
@@ -67,11 +75,13 @@ const IntroAnimationC = ({ setIntroFinished }) => {
                     style={{ opacity: opacity }}           >
 
                     <Button variant={languageSelected === 'en' ? 'primary' : 'none'}
+                        className="d-flex justify-content-center align-items-center"
                         onClick={() => { i18n.changeLanguage('en'); setLanguageSelected('en'); }}>
                         <img className='languageImg' src={`${process.env.PUBLIC_URL}/icons/us-flag.svg`} alt="us-flag" />
                     </Button>
 
                     <Button variant={languageSelected === 'he' ? 'primary' : 'none'}
+                        className="d-flex justify-content-center align-items-center"
                         onClick={() => { i18n.changeLanguage('he'); setLanguageSelected('he'); }}>
                         <img className='languageImg' src={`${process.env.PUBLIC_URL}/icons/israel-flag.svg`} alt="israel-flag" />
                     </Button>
@@ -108,10 +118,11 @@ const IntroAnimationC = ({ setIntroFinished }) => {
                     ></motion.img>
 
                     <motion.h1 className='introHeadline'
+                        dir={languageSelected === 'he' ? 'rtl' : 'ltr'}
                         style={{
                             position: "fixed",
                             top: "calc(70% - 2em)",
-                            left: "calc(50% - 2.3em)",
+                            left: languageSelected === 'he' ? "calc(50% - 3em)" : "calc(50% - 2.3em)",
                             transform: "translate(-50%, -50%)",
                             fontSize: "clamp(6rem, 9vw, 10rem)",
                             mixBlendMode: "difference",
@@ -122,6 +133,7 @@ const IntroAnimationC = ({ setIntroFinished }) => {
                             whiteSpace: "normal",
                             textAlign: "center",
                             lineHeight: 1.2,
+                            unicodeBidi: 'plaintext'
                         }}
                     >
                         {t('intro.hi')}<br />{t('intro.name')}
@@ -148,7 +160,6 @@ const IntroAnimationC = ({ setIntroFinished }) => {
                                 transform: "translate(-50%, -50%)",
                                 fontSize: "3rem",
                                 fontSize: "clamp(2.5rem, 8vw, 3rem)",
-
                                 whiteSpace: "nowrap",
                                 color: "white",
                                 opacity: opacity,
