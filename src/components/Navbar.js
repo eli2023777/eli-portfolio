@@ -19,8 +19,10 @@ const Navbar = ({ show }) => {
 
     return (
         <>
+            {/* <div className={`navWrapper ${languageSelected === 'he' ? 'rtl' : 'ltr'}`}> */}
+
             <motion.nav
-                className={`topNav ${menuOpen ? 'open' : ''}`}
+                className={`topNav ${menuOpen ? 'open' : ''} ${languageSelected === 'he' ? 'rtl' : 'ltr'}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: show ? 1 : 0 }}
                 transition={{ duration: 1 }}
@@ -35,11 +37,13 @@ const Navbar = ({ show }) => {
                 <div className='navbarLngBtns'>
 
                     <Button variant={languageSelected === 'en' ? 'dark' : 'none'}
+                        className="d-flex justify-content-center align-items-center"
                         onClick={() => { i18n.changeLanguage('en'); setLanguageSelected('en'); }}>
                         <img className='navbarLngImg' src={`${process.env.PUBLIC_URL}/icons/us-flag.svg`} alt="us-flag" />
                     </Button>
 
                     <Button variant={languageSelected === 'he' ? 'dark' : 'none'}
+                        className="d-flex justify-content-center align-items-center"
                         onClick={() => { i18n.changeLanguage('he'); setLanguageSelected('he'); }}>
                         <img className='navbarLngImg' src={`${process.env.PUBLIC_URL}/icons/israel-flag.svg`} alt="israel-flag" />
                     </Button>
@@ -80,12 +84,13 @@ const Navbar = ({ show }) => {
 
 
             <div id="hamburgerContainer"
-                className={menuOpen ? 'open' : ''}
+                className={`${menuOpen ? 'open' : ''} ${languageSelected === 'he' ? 'rtl' : 'ltr'}`}
                 onClick={() => setMenuOpen(!menuOpen)}         >
                 <div className="hamburger"></div>
                 <div className="hamburger"></div>
                 <div className="hamburger"></div>
             </div>
+            {/* </div> */}
         </>
     );
 };

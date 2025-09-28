@@ -1,7 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 .introContainer {
-    width: 100vw;
+    width: 100%;
+    max-width: 100%;
     z-index: 1000;
 }
+
 
 .lang-he .introHeadline {
     font-family: 'VarelaRound', sans-serif;
@@ -27,4 +36,39 @@
 
 .languageImg {
     width: 6vh;
+}
+
+
+.meImg {
+    top: 18vh;
+    /* left: 15%; */
+    width: 30vw;
+    height: 60vh;
+}
+
+.newTextY {
+    left: 65%
+}
+
+
+@media screen and (max-width: 768px) {
+    .languageButtons {
+        top: 10vh;
+        right: 3vw;
+        padding: 5px;
+    }
+
+
+    .meImg {
+        /* left: 30%; */
+        top: 7vh;
+        width: 80vw;
+        /* max-width: 160px; */
+        height: 40vh;
+    }
+
+    .newTextY {
+        left: 50%
+    }
+
 }
