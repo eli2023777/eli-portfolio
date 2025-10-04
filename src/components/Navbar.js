@@ -1,21 +1,23 @@
 
 import { motion } from 'framer-motion';
 import '../css/navbar.css';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Form, Button, Modal } from "react-bootstrap";
-// import { useTransform, useScroll } from "motion/react";
+import { GeneralContext } from '../App';
+import { DualIcon } from '../helpers/DualIcon';
+
 
 
 
 const Navbar = ({ show }) => {
+    const { isDark, setIsDark } = useContext(GeneralContext);
+
     const [menuOpen, setMenuOpen] = useState(false);
     const { t, i18n } = useTranslation();
     const [languageSelected, setLanguageSelected] = useState(i18n.language);
     const [activeLink, setActiveLink] = useState('');
-    const [hamburgerWhite, setHamburgerWhite] = useState(false);
 
-    // const blackScreenXNum = useTransform(scrollYProgressInSection, [0, 1], [-110, 0]);
 
 
     const handleClick = (sectionId) => {
@@ -25,7 +27,6 @@ const Navbar = ({ show }) => {
 
     return (
         <>
-            {/* <div className={`navWrapper ${languageSelected === 'he' ? 'rtl' : 'ltr'}`}> */}
 
             <motion.nav
                 className={`topNav ${menuOpen ? 'open' : ''} ${languageSelected === 'he' ? 'rtl' : 'ltr'}`}
@@ -33,31 +34,15 @@ const Navbar = ({ show }) => {
                 animate={{ opacity: show ? 1 : 0 }}
                 transition={{ duration: 1 }}
             >
-                <ul className="profile">
+                <div className="profile">
                     <a href="#">
                         <img src={`${process.env.PUBLIC_URL}/images/me.jpeg`} alt="me" />
                     </a>
-                </ul>
-
-
-                <div className='navbarLngBtns'>
-
-                    <Button variant={languageSelected === 'en' ? 'dark' : 'none'}
-                        className="d-flex justify-content-center align-items-center"
-                        onClick={() => { i18n.changeLanguage('en'); setLanguageSelected('en'); }}>
-                        <img className='navbarLngImg' src={`${process.env.PUBLIC_URL}/icons/us-flag.svg`} alt="us-flag" />
-                    </Button>
-
-                    <Button variant={languageSelected === 'he' ? 'dark' : 'none'}
-                        className="d-flex justify-content-center align-items-center"
-                        onClick={() => { i18n.changeLanguage('he'); setLanguageSelected('he'); }}>
-                        <img className='navbarLngImg' src={`${process.env.PUBLIC_URL}/icons/israel-flag.svg`} alt="israel-flag" />
-                    </Button>
-
                 </div>
 
 
                 <ul className="navBar">
+
 
                     <li><a href="#aboutSection"
                         className={activeLink === 'aboutSection' ? 'active' : ''}
@@ -82,6 +67,41 @@ const Navbar = ({ show }) => {
                         {t("navbar.contact")}
                     </a></li>
 
+
+
+                    {/* Dark/light mood button */}
+                    <Button variant='none'
+                        className='darkIcon'
+                        onClick={() =>
+                            setIsDark(isDark ? false : true)} >
+
+                        {isDark ?
+                            <DualIcon iconName="sun" />
+                            :
+                            <DualIcon iconName="moon" />
+                        }
+
+                    </Button>
+
+
+                    {/* Language buttons */}
+                    <div className='navbarLngBtns'>
+
+                        <Button variant={languageSelected === 'en' ? 'dark' : 'none'}
+                            className="d-flex justify-content-center align-items-center"
+                            onClick={() => { i18n.changeLanguage('en'); setLanguageSelected('en'); }}>
+                            <img className='navbarLngImg' src={`${process.env.PUBLIC_URL}/icons/us-flag.svg`} alt="us-flag" />
+                        </Button>
+
+                        <Button variant={languageSelected === 'he' ? 'dark' : 'none'}
+                            className="d-flex justify-content-center align-items-center"
+                            onClick={() => { i18n.changeLanguage('he'); setLanguageSelected('he'); }}>
+                            <img className='navbarLngImg' src={`${process.env.PUBLIC_URL}/icons/israel-flag.svg`} alt="israel-flag" />
+                        </Button>
+
+                    </div>
+
+
                 </ul>
 
 
@@ -102,40 +122,3 @@ const Navbar = ({ show }) => {
 };
 
 export default Navbar;
-
-
-// const Navbar = ({ show }) => {
-//     return (
-//         <div
-//         // className={`navbar-container ${show ? 'visible' : 'hidden'}`}
-//         >
-//             <nav class="topNav">
-
-//                 <ul class="profile">
-//                     {/* <img src="/images/me.jpeg" alt="me"> */}
-//                     <li><button><a href="#">Eli Holzman</a></button></li>
-//                 </ul>
-
-
-//                 <ul class="navBar">
-//                     <li><button><a href="#contactSection">צור קשר</a></button></li>
-//                     <li><button><a href="#projectsSection">שירותים</a></button></li>
-//                     <li><button><a href="#onMeSection">אודות</a></button></li>
-//                     {/* <li><button><a href="#">ראשי</a></button></li> */}
-
-//                 </ul>
-
-//                 <div class="navBarMobile"></div>
-
-//                 <div id="hamburgerContainer">
-//                     <div class="hamburger"></div>
-//                     <div class="hamburger"></div>
-//                     <div class="hamburger"></div>
-//                 </div>
-
-//             </nav>
-//         </div >
-//     )
-// }
-
-// export default Navbar

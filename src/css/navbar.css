@@ -42,13 +42,13 @@
     display: flex;
     flex-direction: row;
     list-style-type: none;
-    gap: 20px;
+    gap: 3vw;
     margin: 0;
     padding: 0;
 }
 
 .topNav .navBar li {
-    text-align: center;
+    margin: auto;
 }
 
 .navBar a {
@@ -73,11 +73,13 @@
 .navbarLngBtns {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .navbarLngBtns Button {
-    width: 4vw;
-    padding: 8px;
+    width: 2.7vw;
+    height: 5.3vh;
+    padding: 6px;
 }
 
 .navbarLngImg {
@@ -195,7 +197,6 @@
         text-align: center;
         padding: 0;
         margin: 2vh;
-        /* margin: auto; */
     }
 
     .topNav .profile img {

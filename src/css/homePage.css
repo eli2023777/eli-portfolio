@@ -157,9 +157,6 @@ body {
     gap: 10px;
 }
 
-/* .ProjectsButtons button {
-    opacity: 1;
-} */
 
 #projectsSection {
     width: 100%;
@@ -170,7 +167,7 @@ body {
     align-items: center;
     z-index: 1;
     margin: auto;
-
+    margin-top: 30vh;
 }
 
 

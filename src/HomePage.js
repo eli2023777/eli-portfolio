@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useContext } from 'react';
 import { useNavigate } from "react-router";
 import IntroAnimationC from './components/IntroAnimationC';
 import Navbar from './components/Navbar.js';
@@ -15,12 +15,15 @@ import { BsEnvelope } from 'react-icons/bs';
 import { BsPhone } from 'react-icons/bs';
 import { motion } from "motion/react";
 
+import { GeneralContext } from './App';
 
 
 
 
 
 const HomePage = () => {
+
+  const { isDark } = useContext(GeneralContext);
 
   const [activeBtn, setActiveBtn] = useState("featured");
   const contentRef = useRef(null);
@@ -132,7 +135,6 @@ const HomePage = () => {
         variants={manyVariants}
         initial="hidden"
         whileInView="visible"
-      // viewport={{ once: true, amount: 0.3 }}
       >
 
         {/* - MY DEVELOPER ARSENAL - */}
