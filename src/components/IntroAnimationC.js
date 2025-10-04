@@ -95,7 +95,7 @@ const IntroAnimationC = ({ setIntroFinished }) => {
 
     return (
         <div>
-            <div className="introContainer" style={{ height: "550vh" }}>
+            <div className="introContainer" style={{ height: "600vh" }}>
 
                 {/* Language Buttons */}
                 <div className='languageButtons'

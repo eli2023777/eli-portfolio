@@ -1,3 +1,14 @@
+:root {
+    --link-clr: #007bff;
+}
+
+
+.dark {
+    --link-clr: #9b59b6;
+}
+
+
+
 .featuredContainer {
     width: 100vw;
     height: 350vh;
@@ -48,8 +59,11 @@
 }
 
 .liveSiteBtn {
-    background-color: #007bff;
+    background-color: var(--link-clr);
+}
 
+.viewCodeBtn a {
+    color: var(--link-clr)
 }
 
 .liveSiteBtn a {

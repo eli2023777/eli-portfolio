@@ -10,16 +10,22 @@
     --clr: #2C2C2C;
 }
 
+.dark {
+    --bgc-clr: #2C2C2C;
+    --clr: #FFFACD;
+    --link-clr: #9b59b6;
+}
+
 .navWrapper {
     position: relative;
 }
-
 
 
 .topNav {
     position: fixed;
     top: 0;
     width: 100%;
+    color: var(--clr);
     background-color: var(--bgc-clr);
     z-index: 1000;
     display: flex;
@@ -30,6 +36,7 @@
     height: 60px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
+
 
 
 .topNav .profile img {
@@ -82,6 +89,12 @@
     padding: 6px;
 }
 
+.navbarLngBtns Button.selected {
+    background: var(--clr);
+}
+
+
+
 .navbarLngImg {
     width: 2vw;
 }
@@ -118,6 +131,11 @@
     height: 4px;
     background-color: #2C2C2C;
     border-radius: 4px;
+}
+
+
+.darkIcon {
+    color: var(--clr);
 }
 
 

@@ -72,8 +72,10 @@ const Navbar = ({ show }) => {
                     {/* Dark/light mood button */}
                     <Button variant='none'
                         className='darkIcon'
-                        onClick={() =>
-                            setIsDark(isDark ? false : true)} >
+                        onClick={() => {
+                            setIsDark(isDark ? false : true);
+                            document.body.classList.toggle("dark", !isDark);
+                        }} >
 
                         {isDark ?
                             <DualIcon iconName="sun" />
@@ -87,14 +89,20 @@ const Navbar = ({ show }) => {
                     {/* Language buttons */}
                     <div className='navbarLngBtns'>
 
-                        <Button variant={languageSelected === 'en' ? 'dark' : 'none'}
-                            className="d-flex justify-content-center align-items-center"
+                        <Button
+                            variant='none'
+                            //  variant={languageSelected === 'en' ? 'dark' : 'none'}
+                            className={`d-flex justify-content-center align-items-center
+                             ${languageSelected === 'en' ? 'selected' : ''}`}
                             onClick={() => { i18n.changeLanguage('en'); setLanguageSelected('en'); }}>
                             <img className='navbarLngImg' src={`${process.env.PUBLIC_URL}/icons/us-flag.svg`} alt="us-flag" />
                         </Button>
 
-                        <Button variant={languageSelected === 'he' ? 'dark' : 'none'}
-                            className="d-flex justify-content-center align-items-center"
+                        <Button
+                            //  variant={languageSelected === 'he' ? 'dark' : 'none'}
+                            variant='none'
+                            className={`d-flex justify-content-center align-items-center
+                             ${languageSelected === 'he' ? 'selected' : ''}`}
                             onClick={() => { i18n.changeLanguage('he'); setLanguageSelected('he'); }}>
                             <img className='navbarLngImg' src={`${process.env.PUBLIC_URL}/icons/israel-flag.svg`} alt="israel-flag" />
                         </Button>
@@ -106,7 +114,7 @@ const Navbar = ({ show }) => {
 
 
 
-            </motion.nav>
+            </motion.nav >
 
 
             <div id="hamburgerContainer"
