@@ -55,7 +55,8 @@
         },
         "cardsSite": {
             "title": "Business Cards site",
-            "desc": "A responsive business card website using React, part of my studies at HackerU. This project includes features for creating, editing, and organizing business cards, focusing on a smooth and user-friendly interface."
+            "desc1": "A responsive business card website using React, part of my studies at HackerU. This project includes features for creating, editing, and organizing business cards, focusing on a smooth and user-friendly interface.",
+            "desc2": "Note: The API used in this project is no longer active, so the live site is currently unavailable."
         },
         "crudApi": {
             "title": "CRUD API",

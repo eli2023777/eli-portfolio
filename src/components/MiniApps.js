@@ -32,22 +32,26 @@ const slidesData = [
         categories: ['Apps'],
         toolsIcons: ['HTML', 'CSS', 'JS'],
     },
-    {
-        imgSrc: `${process.env.PUBLIC_URL}/images/UsersManagerPrtSc.png`,
-        title: 'Users Manager',
-        key: 'usersManager',
 
-        categories: ['Apps'],
-        toolsIcons: ['HTML', 'CSS', 'JS', 'TS'],
-    },
-    {
-        imgSrc: `${process.env.PUBLIC_URL}/images/screenBPrtSc.png`,
-        title: 'Screens Builder',
-        key: 'screensBuilder',
 
-        categories: ['Apps'],
-        toolsIcons: ['HTML', 'CSS', 'JS'],
-    },
+    // {
+    //     imgSrc: `${process.env.PUBLIC_URL}/images/UsersManagerPrtSc.png`,
+    //     title: 'Users Manager',
+    //     key: 'usersManager',
+
+    //     categories: ['Apps'],
+    //     toolsIcons: ['HTML', 'CSS', 'JS', 'TS'],
+    // },
+    // {
+    //     imgSrc: `${process.env.PUBLIC_URL}/images/screenBPrtSc.png`,
+    //     title: 'Screens Builder',
+    //     key: 'screensBuilder',
+
+    //     categories: ['Apps'],
+    //     toolsIcons: ['HTML', 'CSS', 'JS'],
+    // },
+
+
     {
         imgSrc: `${process.env.PUBLIC_URL}/images/worldClockPrtSc.png`,
         title: 'World Clocks',
