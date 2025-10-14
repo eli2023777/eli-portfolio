@@ -42,44 +42,42 @@ const FeaturedProjects = () => {
                             src={`${process.env.PUBLIC_URL}/images/EventsSitePrtSc.png`} alt="Events Site"
                         />
                         <div className="text">
-                            {/* <h3>Events site</h3>
-                    <p>A full-stack event management website, <br /> using React, Node.js, and
-                        MongoDB <br /> as my final project at HackerU College.
-                    </p>
-                    <p>The application includes user and event management <br /> with a calendar feature integrated via a React library, <br /> allowing business users to create events and regular users <br /> to view and like them.
-                    </p>
-                    <p>This project demonstrates end-to-end development with a focus on interactive scheduling and role-based functionality.
-                    </p> */}
+
 
                             <h3>{t("featured.eventsSite.title")}</h3>
                             <p>{t("featured.eventsSite.desc1")}</p>
                             <p>{t("featured.eventsSite.desc2")}</p>
                             <p>{t("featured.eventsSite.desc3")}</p>
 
-                            <button className='liveSiteBtn'>
-                                <a target="_blank" rel="noreferrer" href="https://eli2023777.github.io/events-site/">
-                                    {/* LIVE SITE */}
-                                    {t("featured.liveSite")}
+                            <div className="buttons">
 
-                                </a>
-                            </button>
+                                <div className="button liveSiteBtn">
+                                    <a target="_blank" rel="noreferrer" href="https://eli2023777.github.io/events-site/">
+                                        {/* LIVE SITE */}
+                                        {t("featured.liveSite")}
 
-                            <button className='viewCodeBtn'>
-                                <a target="_blank" rel="noreferrer" href="https://github.com/eli2023777/events-site">
-                                    {/* VIEW CODE */}
-                                    {t("featured.viewCode")}
+                                    </a>
+                                </div>
 
-                                </a>
-                            </button>
 
-                            {/* download button */}
-                            <button className='downloadBtn'>
-                                <a target="_blank" rel="noreferrer"
-                                    href={`/downloads/eventsSite.zip`} download>
-                                    {t("featured.download")}
+                                <div className="button viewCodeBtn">
+                                    <a target="_blank" rel="noreferrer" href="https://github.com/eli2023777/events-site">
+                                        {/* VIEW CODE */}
+                                        {t("featured.viewCode")}
 
-                                </a>
-                            </button>
+                                    </a>
+                                </div>
+
+                                {/* download button */}
+                                <div className="button downloadBtn">
+                                    <a target="_blank" rel="noreferrer"
+                                        href={`/downloads/eventsSite.zip`} download>
+                                        {t("featured.download")}
+                                    </a>
+                                </div>
+
+                            </div>
+
 
                         </div>
                     </motion.div>
@@ -96,42 +94,34 @@ const FeaturedProjects = () => {
                         />
                         <div className="text">
 
-
                             <h3>{t("featured.cardsSite.title")}</h3>
                             <p>{t("featured.cardsSite.desc1")}</p>
                             <p>{t("featured.cardsSite.desc2")}</p>
 
 
-
-                            {/* LIVE SITE */}
-                            {/* 
-                            <button className='liveSiteBtn'>
-                                <a target="_blank" rel="noreferrer"
-                                    href="https://eli2023777.github.io/my-cards/">
-                                    {t("featured.liveSite")}
-
-                                </a>
-                            </button> */}
+                            <div className="buttons">
 
 
-                            {/* view code button */}
-                            <button className='liveSiteBtn'>
-                                <a target="_blank" rel="noreferrer"
-                                    href="https://github.com/eli2023777/my-cards">
-                                    {/* VIEW CODE */}
-                                    {t("featured.viewCode")}
+                                {/* view code button */}
+                                <div className="button liveSiteBtn">
+                                    <a target="_blank" rel="noreferrer"
+                                        href="https://github.com/eli2023777/my-cards">
+                                        {/* VIEW CODE */}
+                                        {t("featured.viewCode")}
 
-                                </a>
-                            </button>
+                                    </a>
+                                </div>
 
-                            {/* download button */}
-                            <button className='downloadBtn'>
-                                <a target="_blank" rel="noreferrer"
-                                    href={`/downloads/bussinesCards.zip`} download>
-                                    {t("featured.download")}
+                                {/* download button */}
+                                <div className="button downloadBtn">
+                                    <a target="_blank" rel="noreferrer"
+                                        href={`/downloads/bussinesCards.zip`} download>
+                                        {t("featured.download")}
 
-                                </a>
-                            </button>
+                                    </a>
+                                </div>
+
+                            </div>
 
                         </div>
                     </motion.div>
@@ -149,21 +139,27 @@ const FeaturedProjects = () => {
                             <h3>{t("featured.crudApi.title")}</h3>
                             <p>{t("featured.crudApi.desc")}</p>
 
-                            {/* view code button */}
-                            <button className='liveSiteBtn'>
-                                <a target="_blank" rel="noreferrer" href="https://github.com/eli2023777/NodeJS-Project">
-                                    {t("featured.viewCode")}
 
-                                </a>
-                            </button>
+                            <div className="buttons">
 
-                            {/* download button */}
-                            <button className='downloadBtn'>
-                                <a target="_blank" rel="noreferrer"
-                                    href={`/downloads/CRUD-API.zip`} download>
-                                    {t("featured.download")}
-                                </a>
-                            </button>
+                                {/* view code button */}
+                                <div className="button liveSiteBtn">
+                                    <a target="_blank" rel="noreferrer"
+                                        href="https://github.com/eli2023777/NodeJS-Project">
+                                        {t("featured.viewCode")}
+
+                                    </a>
+                                </div>
+
+
+                                {/* download button */}
+                                <div className="button downloadBtn">
+                                    <a target="_blank" rel="noreferrer"
+                                        href={`/downloads/CRUD-API.zip`} download>
+                                        {t("featured.download")}
+                                    </a>
+                                </div>
+                            </div>
 
                         </div>
 
