@@ -113,7 +113,7 @@ const LandingPages = () => {
                                     <a href={`https://github.com/eli2023777/${card.url}`} target="_blank" rel="noopener noreferrer">
                                         <button>{t('landingPages.buttons.viewCode')}</button>
                                     </a>
-                                    <a href={`/downloads/${card.zip}`} download>
+                                    <a href={`/downloads/landing/${card.zip}`} download>
                                         <button>{t('landingPages.buttons.download')}</button>
                                     </a>
                                 </div>

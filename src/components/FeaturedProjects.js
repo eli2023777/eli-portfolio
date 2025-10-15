@@ -32,7 +32,11 @@ const FeaturedProjects = () => {
                 whileInView="visible"
             // viewport={{ once: true, amount: 0.3 }}
             >
+
                 <div className='featuredContainer'>
+
+
+                    {/* Events Site */}
 
                     <motion.div variants={item} className='project'>
                         <img className='featuredProjectImg'
@@ -69,12 +73,12 @@ const FeaturedProjects = () => {
                                 </div>
 
                                 {/* download button */}
-                                {/* <div className="button downloadBtn"> */}
-                                <a target="_blank" rel="noreferrer"
-                                    href={`/downloads/eventsSite.zip`} download>
-                                    {t("featured.download")}
-                                </a>
-                                {/* </div> */}
+                                <div className="button downloadBtn">
+                                    <a target="_blank" rel="noreferrer"
+                                        href={`${process.env.PUBLIC_URL}/downloads/featuredProjects/eventsSite.zip`} download>
+                                        {t("featured.download")}
+                                    </a>
+                                </div>
 
                             </div>
 
@@ -84,6 +88,7 @@ const FeaturedProjects = () => {
 
 
                     {/* Bussines Cards Site */}
+
                     <motion.div variants={item} className='project'>
 
                         <img className='featuredProjectImg'
@@ -115,7 +120,7 @@ const FeaturedProjects = () => {
                                 {/* download button */}
                                 <div className="button downloadBtn">
                                     <a target="_blank" rel="noreferrer"
-                                        href={`/downloads/bussinesCards.zip`} download>
+                                        href={`${process.env.PUBLIC_URL}/downloads/featuredProjects/bussinesCards.zip`} download>
                                         {t("featured.download")}
 
                                     </a>
@@ -125,6 +130,10 @@ const FeaturedProjects = () => {
 
                         </div>
                     </motion.div>
+
+
+
+                    {/* CRUD API  */}
 
                     <motion.div variants={item} className='project'>
 
@@ -155,7 +164,7 @@ const FeaturedProjects = () => {
                                 {/* download button */}
                                 <div className="button downloadBtn">
                                     <a target="_blank" rel="noreferrer"
-                                        href={`/downloads/CRUD-API.zip`} download>
+                                        href={`${process.env.PUBLIC_URL}/downloads/featuredProjects/CRUD-API.zip`} download>
                                         {t("featured.download")}
                                     </a>
                                 </div>
