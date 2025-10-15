@@ -68,8 +68,9 @@
     },
     "miniApps": {
         "buttons": {
+            "liveSite": "Live Site",
             "viewCode": "View Code",
-            "liveSite": "Live Site"
+            "download": "Download"
         },
         "ticTacToe": {
             "title": "Tic Tac Toe",

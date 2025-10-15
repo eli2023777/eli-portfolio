@@ -242,6 +242,12 @@ main {
     opacity: 0;
 }
 
+.linkBtn a {
+    color: #000;
+    text-decoration: none;
+}
+
+
 .swiper-slide-active .linkBtn {
     opacity: 1;
     transition: 0.8s ease-out;

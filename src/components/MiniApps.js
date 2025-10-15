@@ -195,21 +195,6 @@ const MiniApps = () => {
 
                                 <div className="footer">
 
-                                    {/* View Code Button */}
-                                    <button className='linkBtn'>
-                                        <span className='label'
-                                            onClick={() => window.open(
-                                                `https://github.com/eli2023777/${formatTitleForRepoUrl
-                                                    (
-                                                        slide.title
-                                                    )}.git`,
-                                                '_blank', 'noopener,noreferrer')}
-                                        >
-                                            {/* View code */}
-                                            {t('miniApps.buttons.viewCode')}
-                                        </span>
-                                    </button>
-
                                     {/* Live Site Button */}
                                     <button className='linkBtn'>
                                         <span className='label'
@@ -225,6 +210,40 @@ const MiniApps = () => {
 
                                         </span>
                                     </button>
+
+
+
+                                    {/* View Code Button */}
+                                    <button className='linkBtn'>
+                                        <span className='label'
+                                            onClick={() => window.open(
+                                                `https://github.com/eli2023777/${formatTitleForRepoUrl
+                                                    (
+                                                        slide.title
+                                                    )}.git`,
+                                                '_blank', 'noopener,noreferrer')}
+                                        >
+                                            {/* View code */}
+                                            {t('miniApps.buttons.viewCode')}
+                                        </span>
+                                    </button>
+
+
+
+                                    {/* Download Button */}
+                                    <button className='linkBtn'>
+                                        <span className='label'>
+
+                                            <a style={{}}
+                                                href={`${process.env.PUBLIC_URL}/downloads/miniApps/${slide.key}.zip`} download>
+                                                {/* Live site */}
+                                                {t('miniApps.buttons.download')}
+                                            </a>
+
+                                        </span>
+                                    </button>
+
+
                                 </div>
                             </div>
                         </SwiperSlide>

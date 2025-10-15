@@ -67,8 +67,9 @@
     },
     "miniApps": {
         "buttons": {
+            "liveSite": "צפייה באתר",
             "viewCode": "צפייה בקוד",
-            "liveSite": "צפייה באתר"
+            "download": "הורדה"
         },
         "ticTacToe": {
             "title": "איקס עיגול",
