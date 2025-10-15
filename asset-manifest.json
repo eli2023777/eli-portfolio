@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/eli-portfolio/static/css/main.a8f128f3.css",
-    "main.js": "/eli-portfolio/static/js/main.e3ebeb1b.js",
+    "main.js": "/eli-portfolio/static/js/main.c8c91063.js",
     "static/js/453.2049e564.chunk.js": "/eli-portfolio/static/js/453.2049e564.chunk.js",
     "static/media/VarelaRound-Regular.ttf": "/eli-portfolio/static/media/VarelaRound-Regular.e67ccd4a92677fdf8719.ttf",
     "static/media/brown-sugar.ttf": "/eli-portfolio/static/media/brown-sugar.5d43ee80a4471ade023e.ttf",
     "index.html": "/eli-portfolio/index.html",
     "main.a8f128f3.css.map": "/eli-portfolio/static/css/main.a8f128f3.css.map",
-    "main.e3ebeb1b.js.map": "/eli-portfolio/static/js/main.e3ebeb1b.js.map",
+    "main.c8c91063.js.map": "/eli-portfolio/static/js/main.c8c91063.js.map",
     "453.2049e564.chunk.js.map": "/eli-portfolio/static/js/453.2049e564.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a8f128f3.css",
-    "static/js/main.e3ebeb1b.js"
+    "static/js/main.c8c91063.js"
   ]
 }
