@@ -69,12 +69,12 @@ const FeaturedProjects = () => {
                                 </div>
 
                                 {/* download button */}
-                                <div className="button downloadBtn">
-                                    <a target="_blank" rel="noreferrer"
-                                        href={`/downloads/eventsSite.zip`} download>
-                                        {t("featured.download")}
-                                    </a>
-                                </div>
+                                {/* <div className="button downloadBtn"> */}
+                                <a target="_blank" rel="noreferrer"
+                                    href={`/downloads/eventsSite.zip`} download>
+                                    {t("featured.download")}
+                                </a>
+                                {/* </div> */}
 
                             </div>
 
