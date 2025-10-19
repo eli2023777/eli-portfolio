@@ -119,7 +119,7 @@ const HomePage = () => {
 
 
   return (
-    <>
+    <div className='homePageContainer'>
 
 
       {/* - INTRO - */}
@@ -137,11 +137,13 @@ const HomePage = () => {
         whileInView="visible"
       >
 
-        {/* - MY DEVELOPER ARSENAL - */}
 
-        <div className="icons">
 
-          <motion.div variants={item}>
+        {/* - ICONS - */}
+
+        <div className="iconsContainer">
+
+          <motion.div className='iconsHeadlineBox' variants={item}>
             <h1 className='headline'>
               {t('home.developerArsenal')}
             </h1>
@@ -149,66 +151,63 @@ const HomePage = () => {
           </motion.div>
 
 
-          <div className="firstRowIcons" >
+          <div className="icons" >
+
             <motion.div variants={item} className="icon">
 
-              <img src={`${process.env.PUBLIC_URL}/icons/img-HTML.png`} alt="html" />
-              <h6>HTML</h6>
+              <img className='iconImg' src={`${process.env.PUBLIC_URL}/icons/img-HTML.png`} alt="html" />
+              <h6 className='iconText'>HTML</h6>
             </motion.div>
 
 
             <motion.div variants={item} className="icon">
 
-              <img src={`${process.env.PUBLIC_URL}/icons/img-CSS.png`} alt="css" />
-              <h6>CSS</h6>
+              <img className='iconImg' src={`${process.env.PUBLIC_URL}/icons/img-CSS.png`} alt="css" />
+              <h6 className='iconText'>CSS</h6>
               {/* </div> */}
             </motion.div>
 
             <motion.div variants={item} className="icon">
-              <img src={`${process.env.PUBLIC_URL}/icons/img-Bootstrap.png`} alt="bootstrap" />
-              <h6>Bootstrap</h6>
+              <img className='iconImg' src={`${process.env.PUBLIC_URL}/icons/img-Bootstrap.png`} alt="bootstrap" />
+              <h6 className='iconText'>Bootstrap</h6>
             </motion.div>
 
 
             <motion.div variants={item} className="icon">
-              <img src={`${process.env.PUBLIC_URL}/icons/img-JS.png`} alt="js" />
-              <h6>JavaScript</h6>
+              <img className='iconImg' src={`${process.env.PUBLIC_URL}/icons/img-JS.png`} alt="js" />
+              <h6 className='iconText'>JavaScript</h6>
             </motion.div>
 
 
             <motion.div variants={item} className="icon">
-              <img src={`${process.env.PUBLIC_URL}/icons/img-TS.png`} alt="ts" />
-              <h6>TypeScript</h6>
+              <img className='iconImg' src={`${process.env.PUBLIC_URL}/icons/img-TS.png`} alt="ts" />
+              <h6 className='iconText'>TypeScript</h6>
             </motion.div>
-          </div>
 
-
-
-          <div class="secondRowIcons">
 
             <motion.div variants={item} className="icon">
-              <img src={`${process.env.PUBLIC_URL}/icons/img-React.png`} alt="react" />
-              <h6>React</h6>
+              <img className='iconImg' src={`${process.env.PUBLIC_URL}/icons/img-React.png`} alt="react" />
+              <h6 className='iconText'>React</h6>
             </motion.div>
 
             <motion.div variants={item} className="icon">
-              <img src={`${process.env.PUBLIC_URL}/icons/img-NodeJS.png`} alt="node.js" />
-              <h6>NodeJS</h6>
+              <img className='iconImg' src={`${process.env.PUBLIC_URL}/icons/img-NodeJS.png`} alt="node.js" />
+              <h6 className='iconText'>NodeJS</h6>
             </motion.div>
 
             <motion.div variants={item} className="icon">
-              <img src={`${process.env.PUBLIC_URL}/icons/img-NextJS.svg`} alt="next.js" />
-              <h6>NextJS</h6>
+              <img className='iconImg' src={`${process.env.PUBLIC_URL}/icons/img-NextJS.svg`} alt="next.js" />
+              <h6 className='iconText'>NextJS</h6>
             </motion.div>
 
             <motion.div variants={item} className="icon">
-              <img src={`${process.env.PUBLIC_URL}/icons/img-Git.png`} alt="Git" />
-              <h6>Git</h6>
+              <img className='iconImg' src={`${process.env.PUBLIC_URL}/icons/img-Git.png`} alt="Git" />
+              <h6 className='iconText'>Git</h6>
             </motion.div>
 
             <motion.div variants={item} className="icon">
-              <img src={`${process.env.PUBLIC_URL}/icons/img-mongoDB.png`} alt="mongoDB" />
-              <h6>MongoDB</h6>
+              <img className='iconImg' src={`${process.env.PUBLIC_URL}/icons/img-mongoDB.png`} alt="mongoDB" />
+              <h6 className='iconText'>MongoDB</h6>
             </motion.div>
 
           </div>
@@ -583,7 +582,7 @@ const HomePage = () => {
       </ div >
 
 
-    </>
+    </div>
 
   );
 }
