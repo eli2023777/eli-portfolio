@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/eli-portfolio/static/css/main.cbdfe831.css",
-    "main.js": "/eli-portfolio/static/js/main.0c6a0482.js",
+    "main.css": "/eli-portfolio/static/css/main.0d897f12.css",
+    "main.js": "/eli-portfolio/static/js/main.00ed6914.js",
     "static/js/453.2049e564.chunk.js": "/eli-portfolio/static/js/453.2049e564.chunk.js",
     "static/media/VarelaRound-Regular.ttf": "/eli-portfolio/static/media/VarelaRound-Regular.e67ccd4a92677fdf8719.ttf",
     "static/media/brown-sugar.ttf": "/eli-portfolio/static/media/brown-sugar.5d43ee80a4471ade023e.ttf",
     "index.html": "/eli-portfolio/index.html",
-    "main.cbdfe831.css.map": "/eli-portfolio/static/css/main.cbdfe831.css.map",
-    "main.0c6a0482.js.map": "/eli-portfolio/static/js/main.0c6a0482.js.map",
+    "main.0d897f12.css.map": "/eli-portfolio/static/css/main.0d897f12.css.map",
+    "main.00ed6914.js.map": "/eli-portfolio/static/js/main.00ed6914.js.map",
     "453.2049e564.chunk.js.map": "/eli-portfolio/static/js/453.2049e564.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cbdfe831.css",
-    "static/js/main.0c6a0482.js"
+    "static/css/main.0d897f12.css",
+    "static/js/main.00ed6914.js"
   ]
 }
