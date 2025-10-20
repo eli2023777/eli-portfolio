@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from "motion/react";
-import '../css/introAnimation.css'
+import '../css/components/introAnimation.css'
 
 import { useTranslation } from 'react-i18next';
 
@@ -9,7 +9,7 @@ import { useInView } from "framer-motion";
 
 
 
-const IntroAnimationC = ({ setIntroFinished }) => {
+const IntroAnimation = ({ setIntroFinished }) => {
     const { scrollYProgress } = useScroll();
     const sectionRef = useRef(null);
     const [sectionTop, setSectionTop] = useState(0);
@@ -208,4 +208,4 @@ const IntroAnimationC = ({ setIntroFinished }) => {
     );
 };
 
-export default IntroAnimationC;
+export default IntroAnimation;

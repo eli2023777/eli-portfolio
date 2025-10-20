@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import RoutesC from './RoutesC.js';
+import RoutesC from './components/RoutesC';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState, createContext } from 'react';
 

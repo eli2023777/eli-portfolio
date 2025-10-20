@@ -3,10 +3,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import '../css/miniApps.css';
+import '../../css/components/projects/miniApps.css';
+
 
 import { useTranslation } from 'react-i18next';
-import i18n from '../i18n';
+import i18n from '../../helpers/i18n';
 
 const slidesData = [
     {

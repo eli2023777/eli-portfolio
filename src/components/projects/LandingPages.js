@@ -1,8 +1,9 @@
 
 import { useState, useEffect, useContext } from 'react';
-import '../css/landingPages.css';
+import '../../css/components/projects/landingPages.css';
+
 import { useTranslation } from 'react-i18next';
-import { GeneralContext } from '../App';
+import { GeneralContext } from '../../App';
 
 
 const LandingPages = () => {

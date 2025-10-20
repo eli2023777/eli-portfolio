@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-import '../css/navbar.css';
+import '../css/components/navbar.css';
 import { useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Form, Button, Modal } from "react-bootstrap";

@@ -1,4 +1,4 @@
-import '../css/featuredProjects.css';
+import '../../css/components/projects/featuredProjects.css';
 
 import { useTranslation } from 'react-i18next';
 import { motion } from "motion/react";

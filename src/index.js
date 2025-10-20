@@ -4,7 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import './i18n';
+import './helpers/i18n';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

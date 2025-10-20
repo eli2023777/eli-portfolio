@@ -1,13 +1,12 @@
 import { useEffect, useState, useRef, useContext } from 'react';
-import { useNavigate } from "react-router";
-import IntroAnimationC from './components/IntroAnimationC';
-import Navbar from './components/Navbar.js';
-import FeaturedProjects from './components/FeaturedProjects'
-import MiniApps from './components/MiniApps.js';
-import LandingPages from './components/LandingPages.js';
+import IntroAnimation from '../components/IntroAnimation.js';
+import Navbar from '../components/Navbar.js';
+import FeaturedProjects from '../components/projects/FeaturedProjects.js'
+import MiniApps from '../components/projects/MiniApps.js';
+import LandingPages from '../components/projects/LandingPages.js';
 import { Form, Button, Modal } from "react-bootstrap";
 
-import './css/homePage.css';
+import '../css/homePage.css';
 
 import { useTranslation } from 'react-i18next';
 import { BsPerson } from 'react-icons/bs';
@@ -15,7 +14,8 @@ import { BsEnvelope } from 'react-icons/bs';
 import { BsPhone } from 'react-icons/bs';
 import { motion } from "motion/react";
 
-import { GeneralContext } from './App';
+import { GeneralContext } from '../App.js';
+import About from '../components/sections/About.js';
 
 
 
@@ -124,7 +124,7 @@ const HomePage = () => {
 
       {/* - INTRO - */}
       {/* Intro Animation Component */}
-      <IntroAnimationC setIntroFinished={setIntroFinished} />
+      <IntroAnimation setIntroFinished={setIntroFinished} />
 
 
       {/* - NAVBAR - */}
@@ -139,7 +139,7 @@ const HomePage = () => {
 
 
 
-        {/* - ICONS - */}
+        {/* - ICONS section - */}
 
         <div className="iconsContainer">
 
@@ -219,7 +219,7 @@ const HomePage = () => {
 
 
 
-      {/* - MY WORKS - */}
+      {/* - PROJECTS section - */}
 
       <motion.div
         variants={manyVariants}
@@ -293,30 +293,14 @@ const HomePage = () => {
       </motion.div >
 
 
-      {/* - ABOUT - */}
 
-      < motion.div
-        variants={variants}
-        initial="hidden"
-        whileInView="visible"
-      >
+      {/* - ABOUT section - */}
 
-        <motion.div variants={item} id='aboutSection'>
-
-          <img src={`${process.env.PUBLIC_URL}/me.jpeg`} alt="Big me" />
-          <div className="textOnMe">
-            <h1 className='headline'>{t('home.aboutMe')}</h1>
-            {t("home.aboutParagraphs", { returnObjects: true }).map((paragraph, index) => (
-              <p className='aboutMePar' key={index}>{paragraph}</p>
-            ))}
-
-          </div >
-
-        </motion.div >
-      </motion.div >
+      <About variants={variants} item={item} t={t} />
 
 
-      {/* - CONTACT - */}
+
+      {/* - CONTACT section - */}
 
       < motion.div
         variants={variants}
@@ -490,6 +474,9 @@ const HomePage = () => {
         </motion.div >
       </motion.div >
 
+
+
+
       {/* - FOOTER - */}
 
       < footer >
@@ -567,7 +554,6 @@ const HomePage = () => {
 
 
 
-
       {/* - UNDER FOOTER - */}
 
       < div class="underFooter" >
@@ -580,6 +566,7 @@ const HomePage = () => {
 
         </p>
       </ div >
+
 
 
     </div>

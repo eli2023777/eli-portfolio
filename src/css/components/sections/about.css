@@ -1,0 +1,44 @@
+/* About section */
+
+#aboutSection {
+    width: 100%;
+    /* height: 100vh; */
+    padding: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 10vw;
+    z-index: 1;
+    margin: auto;
+}
+
+#aboutSection img {
+    width: 30vw;
+    /* height: 60vh; */
+    border-radius: 80px;
+}
+
+
+
+.textOnMe .aboutMePar {
+    width: 40vw;
+    text-align: start;
+}
+
+
+.viewBtn {
+    width: 260px;
+    height: 41px;
+    border-radius: 25px;
+    font: normal normal bold 20px/30px 'MyCustomFont';
+    letter-spacing: 0.3px;
+    box-shadow: #000 0 2px 2px;
+    cursor: pointer;
+}
+
+.viewBtn:hover {
+    width: 265px;
+    height: 45px;
+}
