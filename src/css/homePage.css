@@ -54,6 +54,7 @@ body {
 
 
 
+
 .header {
     height: 200vh;
     /* padding: 100px; */
@@ -90,6 +91,12 @@ body {
 }
 
 
+
+
+
+
+
+
 .icons {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -114,10 +121,17 @@ body {
 
 
 
-/* 
-.icons>icon:nth-child(n+7) {
-    grid-column: span 1;
-} */
+/* Projects section  */
+
+#projectsSection {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    margin: 30vh 0 10vh 0;
+}
 
 
 .ProjectsButtons {
@@ -126,20 +140,8 @@ body {
 }
 
 
-#projectsSection {
-    width: 100%;
-    /* padding: 100px; */
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 1;
-    margin: auto;
-    margin-top: 30vh;
-}
 
-
-
+/* About section */
 
 #aboutSection {
     width: 100%;
@@ -186,18 +188,19 @@ body {
 
 
 
-/* Contact */
+/* Contact section */
 
 #contactSection {
     height: 180vh;
     background: #3A3A3A;
     color: #fff;
     display: flex;
-    /* flex-direction: row; */
-    /* gap: 10vw; */
+    display: flex;
+    flex-direction: row;
     align-items: center;
     box-sizing: border-box;
 }
+
 
 #contactSection .letterContainer {
     margin-top: 0;
@@ -271,6 +274,10 @@ textarea {
     height: 52px;
 }
 
+
+
+/* Footer */
+
 footer {
     color: var(--footer-clr);
     background-color: var(--footer-bg-clr);
@@ -313,7 +320,6 @@ footer nav {
 }
 
 
-
 .FooterIconBtn {
     background: none;
     border: none;
@@ -326,6 +332,8 @@ footer nav {
     width: 40px;
     height: auto;
 }
+
+/* Under footer */
 
 .underFooter {
     height: 9vh;
@@ -369,29 +377,6 @@ button {
     position: relative;
 }
 
-/* .languageButtons {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    top: 15vh;
-    right: 2vw;
-    text-align: center;
-    padding: 10px;
-    z-index: 1000;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    background-color: #fff;
-}
-
-
-.languageImg {
-    width: 6vh;
-} */
-
-
-#contactSection {
-    display: flex;
-    flex-direction: row;
-}
 
 
 .contactForm {

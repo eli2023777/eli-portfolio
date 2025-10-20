@@ -1,11 +1,15 @@
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import '../css/landingPages.css';
 import { useTranslation } from 'react-i18next';
+import { GeneralContext } from '../App';
+
 
 const LandingPages = () => {
     const [selectedCard, setSelectedCard] = useState(null);
     const { t } = useTranslation();
+    const { isDark } = useContext(GeneralContext);
+
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -25,7 +29,8 @@ const LandingPages = () => {
 
     return (
         <div>
-            <div id="projectsContainer">
+            <div className="landingPagesContainer"
+                style={{ background: isDark ? "#000" : "#F6F6F6" }}>
 
                 <div className="gridContainer">
                     {[

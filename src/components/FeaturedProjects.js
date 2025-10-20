@@ -1,6 +1,4 @@
-import React from 'react'
-import '../css/featuredProjects.css'
-import { Button } from 'react-bootstrap';
+import '../css/featuredProjects.css';
 
 import { useTranslation } from 'react-i18next';
 import { motion } from "motion/react";
@@ -30,7 +28,6 @@ const FeaturedProjects = () => {
                 variants={manyVariants}
                 initial="hidden"
                 whileInView="visible"
-            // viewport={{ once: true, amount: 0.3 }}
             >
 
                 <div className='featuredContainer'>

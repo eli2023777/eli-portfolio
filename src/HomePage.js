@@ -234,7 +234,7 @@ const HomePage = () => {
 
           {/* Projects Buttons */}
 
-          <div class="ProjectsButtons">
+          <div className="ProjectsButtons">
             <motion.div variants={item}>
 
               <Button
