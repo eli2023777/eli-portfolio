@@ -42,3 +42,26 @@
     width: 265px;
     height: 45px;
 }
+
+
+/* For mobile sizes */
+
+@media screen and (max-width: 768px) {
+    #aboutSection {
+        padding: 15vh;
+        flex-direction: column;
+        gap: 8vh;
+        z-index: 1;
+        margin: auto;
+    }
+
+    #aboutSection img {
+        width: 60vw;
+    }
+
+    .textOnMe .aboutMePar {
+        width: 80vw;
+        margin-left: 3vw;
+    }
+
+}

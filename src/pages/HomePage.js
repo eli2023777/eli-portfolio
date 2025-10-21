@@ -16,6 +16,7 @@ import { motion } from "motion/react";
 
 import { GeneralContext } from '../App.js';
 import About from '../components/sections/About.js';
+import Contact from '../components/sections/Contact.js';
 
 
 
@@ -39,7 +40,7 @@ const HomePage = () => {
   }
 
   const { t, i18n } = useTranslation();
-  const [languageSelected, setLanguageSelected] = useState(i18n.language);
+  // const [languageSelected, setLanguageSelected] = useState(i18n.language);
 
   useEffect(() => {
     const body = document.body;
@@ -69,6 +70,7 @@ const HomePage = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
 
   // const [submitted, setSubmitted] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -300,7 +302,11 @@ const HomePage = () => {
 
 
 
+
       {/* - CONTACT section - */}
+
+      {/* <Contact variants={variants} item={item} t={t} /> */}
+
 
       < motion.div
         variants={variants}
